@@ -8,13 +8,18 @@
 
         <link rel="icon" href="/favicon.ico">
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
 
     </head>
 
     <body>
-        <button type="button" onclick="window.location.href='/login'">Login</button>
 
-        <button type="button" onclick="window.location.href='/register'">Register</button>
+        <img src="{{ asset('ec-banner2.png') }}" class="resize" style="margin-bottom: 5vh;"/>
+
+        <div class="menu">
+            <button type="button" onclick="window.location.href='/login'">Login</button>
+            <button type="button" onclick="window.location.href='/register'">Register</button>
+        </div>
+
     </body>
 </html>
