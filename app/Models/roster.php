@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class roster extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'date',
+        'supervisor',
+        'doctor',
+        'caregiver1',
+        'caregiver2',
+        'caregiver3',
+        'caregiver4'
+    ];
 }

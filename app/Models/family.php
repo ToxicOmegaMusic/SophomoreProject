@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class family extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'family_code',
+        'f_name',
+        'l_name',
+        'email',
+        'phone',
+        'password',
+        'dob'
+    ];
 }
