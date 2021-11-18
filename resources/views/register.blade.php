@@ -1,6 +1,4 @@
-<!--
-    UNFINISHED PAGE
--->
+<!-- change stylesheet ref -->
 
 <!DOCTYPE html>
 <head>

@@ -1,29 +1,24 @@
-<!--
-    UNFINISHED PAGE
--->
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
 </head>
 <body>
 
-<div class="horizontal-page">
-
-    <div>side banner TBD</div>
+<div class="aligner-element"></div> <!-- This makes me a certified HACKER -->
 
     <form> <!-- Add action later! -->
-        <input type="text" name="username"/>
-        <input type="text" name="password"/>
-        <input type="submit" name="sub" style="background-color: #006600; color: white; font-size: 1.5em; font-family: Georgia, serif;"/>
+        <div class="form-text"></div>
+
+        <input type="text" name="username" placeholder="username"/>
+
+        <input type="password" name="password" placeholder="password"/>
+
+        <input type="submit" name="sub">
     </form>
 
-    <div>side banner TBD</div>
-
-</div>
-
+<div class="aligner-element"></div>
 
 </body>
 </html>
