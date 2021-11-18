@@ -15,6 +15,7 @@
     <div>side banner TBD</div>
 
     <form> <!-- Add action later! -->
+        <input list="userType" id="typeOfUser" name="typeOfUser"/>
         <datalist id="userType">
             <option value="Family Member">
             <option value="Patient" class="ShowExtraFields">
