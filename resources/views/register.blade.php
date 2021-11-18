@@ -36,14 +36,35 @@
         <input type="date" name="DOB" id="DOB">
 
 
-        <label for="FamilyCode" class="showIfPatientSelected">Family Code</label>
-        <input type="text" name="FamilyCode" id="FamilyCode" class="showIfPatientSelected">
+        <div id="isPatientSelected">
+        <label for="FamilyPassword" class="showIfPatientSelected">Family Password</label>
+        <input type="password" name="FamilyPassword" id="FamilyPassword" class="showIfPatientSelected">
         <label for="FamilyContactName" class="showIfPatientSelected">Emergency Contact Name</label>
         <input type="text" name="FamilyContactName" id="FamilyContactName" class="showIfPatientSelected">
         <label for="FamilyContactNumber" class="showIfPatientSelected">Emergency Contact Phone Number</label>
         <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="showIfPatientSelected">
         <label for="FamilyRelation" class="showIfPatientSelected">Relation to Patient</label>
         <input type="text" name="FamilyRelation" id="FamilyRelation" class="showIfPatientSelected">
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $("#userType").change(function() {
+                if ($(this).val() == "Patient") {
+                    $('#isPatientSelected').show();
+                    $('#isPatientSelected').attr('required', '');
+                }
+             else {
+                $('#isPatientSelected').hide();
+                $('#isPatientSelected').removeAttr('required');
+            }
+            });
+            
+
+            $("#userType").trigger("change");
+
+        </script>
         
 
 
