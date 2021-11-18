@@ -29,11 +29,8 @@
         <label for="email">Email Address</label>
         <input type="email" name="email" id="email" required>
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        <input type="text" class="phoneNumber" id="phone" name="phone" placeholder="000-000-0000" pattern="[0-9]{10}" required>
         <label for="password">Enter a password</label>
-        <input type="password" name="password" id="password" required>
-        <label for="DOB">Date of birth</label>
-        <input type="date" name="DOB" id="DOB">
 
 
         <div id="isPatientSelected">
@@ -65,6 +62,7 @@
             $("#userType").trigger("change");
 
         </script>
+        <script src="makeItAPhoneNumber.js"></script>
         
 
 
