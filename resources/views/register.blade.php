@@ -14,7 +14,7 @@
 
     <div>side banner TBD</div>
 
-    <form> <!-- Add action later! -->
+    <form action="/api/register" method="POST">
         <input list="userType" id="typeOfUser" name="typeOfUser"/>
         <datalist id="userType">
             <option value="Family Member">

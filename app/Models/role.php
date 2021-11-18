@@ -9,6 +9,6 @@ class role extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'access_level'
+        'role_title'
     ];
 }
