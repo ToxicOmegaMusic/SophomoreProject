@@ -15,15 +15,14 @@
     <div>side banner TBD</div>
 
     <form> <!-- Add action later! -->
-        <input list="userType" id="typeOfUser" name="typeOfUser"/>
-        <datalist id="userType">
-            <option value="Family Member">
-            <option value="Patient" class="ShowExtraFields">
-            <option value="Caregiver">
-            <option value="Doctor">
-            <option value="Supervisor">
-            <option value="Admin">
-        </datalist>
+        <select id="userType">
+            <option value="Family Member">Family Member</option>
+            <option value="Patient" class="ShowExtraFields">Patient</option>
+            <option value="Caregiver">Caregiver</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Admin">Admin</option>
+        </select>
 
         <label for="fName">First Name</label>
         <input type="text" name="fName" id="fName" required>
