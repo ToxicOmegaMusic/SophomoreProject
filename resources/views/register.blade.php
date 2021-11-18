@@ -1,6 +1,4 @@
-<!--
-    UNFINISHED PAGE
--->
+<!-- change stylesheet ref -->
 
 <!DOCTYPE html>
 <head>
@@ -14,16 +12,15 @@
 
     <div>side banner TBD</div>
 
-    <form action="/api/register" method="POST">
-        <input list="userType" id="typeOfUser" name="typeOfUser"/>
-        <datalist id="userType">
-            <option value="Family Member">
-            <option value="Patient" class="ShowExtraFields">
-            <option value="Caregiver">
-            <option value="Doctor">
-            <option value="Supervisor">
-            <option value="Admin">
-        </datalist>
+    <form> <!-- Add action later! -->
+        <select id="userType">
+            <option value="Family Member">Family Member</option>
+            <option value="Patient" class="ShowExtraFields">Patient</option>
+            <option value="Caregiver">Caregiver</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Admin">Admin</option>
+        </select>
 
         <label for="fName">First Name</label>
         <input type="text" name="fName" id="fName" required>
@@ -39,14 +36,35 @@
         <input type="date" name="DOB" id="DOB">
 
 
-        <label for="FamilyCode" class="showIfPatientSelected">Family Code</label>
-        <input type="text" name="FamilyCode" id="FamilyCode" class="showIfPatientSelected">
+        <div id="isPatientSelected">
+        <label for="FamilyPassword" class="showIfPatientSelected">Family Password</label>
+        <input type="password" name="FamilyPassword" id="FamilyPassword" class="showIfPatientSelected">
         <label for="FamilyContactName" class="showIfPatientSelected">Emergency Contact Name</label>
         <input type="text" name="FamilyContactName" id="FamilyContactName" class="showIfPatientSelected">
         <label for="FamilyContactNumber" class="showIfPatientSelected">Emergency Contact Phone Number</label>
         <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="showIfPatientSelected">
         <label for="FamilyRelation" class="showIfPatientSelected">Relation to Patient</label>
         <input type="text" name="FamilyRelation" id="FamilyRelation" class="showIfPatientSelected">
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $("#userType").change(function() {
+                if ($(this).val() == "Patient") {
+                    $('#isPatientSelected').show();
+                    $('#isPatientSelected').attr('required', '');
+                }
+                else {
+                $('#isPatientSelected').hide();
+                $('#isPatientSelected').removeAttr('required');
+            }
+            });
+            
+
+            $("#userType").trigger("change");
+
+        </script>
         
 
 

@@ -9,15 +9,17 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: Georgia, serif;
+    background-image: url('ec-page-bg.png');
+    background-size: 100vw;
+    background-repeat: no-repeat; background-position: top 1vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #cce0cc;
 }
 
-.horizontal-page {
-    display: flex;
-    
+.aligner-element {
+    height: 15vh;
 }
 
 img.resize {
@@ -37,23 +39,43 @@ img.resize {
     height: 50vh;
 }
 
-.menu button {
-    width: 20vw;
-    height: 10vh;
+input[type=submit] {
     background-color: #006600;
     color: white;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-family: Georgia, serif;
+    height: 6vh;
+}
+
+input[type=submit]:hover {
+    cursor: grab;
+    background-color: #009700;
 }
 
 form {
-    border: 2px solid red;
+    background-color: #E2F9E2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 50vw;
-    height: 40vh;
+    width: 59vw;
+    height: 60vh;
+}
+
+.form-text {
+    background-image: url("login-banner2.png");
+    background-position: center;
+    background-size: 100vh;
+    width: 40vw;
+    height: 20vh;
+}
+
+.form-text h2 {
+    margin: 1vh;
+}
+
+.form-text p {
+    margin: 1vh;
 }
 
 input {
