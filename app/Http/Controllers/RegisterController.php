@@ -27,36 +27,37 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'typeOfUser' => 'required',
+            'userType' => 'required',
             'fName' => 'required',
             'lName' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'password' => 'required',
             'DOB' => 'required',
-            'FamilyCode' => 'required',
+            'FamilyPassword' => 'required',
             'FamilyContactName' => 'required',
             'FamilyContactNumber' => 'required',
             'FamilyRelation' => 'required'
         ]);
 
-        // switch ($request['userType']) {
-            
-        // }
+        switch ($request->userType) {
+            case "Patient":
+                $patient = new patient;
+                $patient->f_name = $request->fName;
+                $patient->l_name = $request->lName;
+                $patient->email = $request->email;
+                $patient->phone = $request->phone;
+                $patient->password = $request->password;
+                $patient->age = Carbon::parse($request->DOB)->age;
+                $patient->dob = $request->DOB;
+                $patient->family_password = $request->FamilyPassword;
+                $patient->ec_phone = $request->FamilyContactNumber;
+                $patient->ec_name = $request->FamilyContactName;
+                $patient->ec_relation = $request->FamilyRelation;
+                $patient->save();
+                break;
+        }
 
-        $patient = new patient;
-        $patient->f_name = $request->fName;
-        $patient->l_name = $request->lName;
-        $patient->email = $request->email;
-        $patient->phone = $request->phone;
-        $patient->password = $request->password;
-        $patient->age = Carbon::parse($request->DOB)->age;
-        $patient->dob = $request->DOB;
-        $patient->family_password = $request->FamilyCode;
-        $patient->ec_phone = $request->FamilyContactNumber;
-        $patient->ec_name = $request->FamilyContactName;
-        $patient->ec_relation = $request->FamilyRelation;
-        $patient->save();
         return back();
     }
 

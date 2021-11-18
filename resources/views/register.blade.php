@@ -12,8 +12,8 @@
 
     <div>side banner TBD</div>
 
-    <form> <!-- Add action later! -->
-        <select id="userType">
+    <form action="/api/register" method="POST"> <!-- Add action later! -->
+        <select name="userType" id="userType">
             <option value="Family Member">Family Member</option>
             <option value="Patient" class="ShowExtraFields">Patient</option>
             <option value="Caregiver">Caregiver</option>
@@ -29,7 +29,7 @@
         <label for="email">Email Address</label>
         <input type="email" name="email" id="email" required>
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
         <label for="password">Enter a password</label>
         <input type="password" name="password" id="password" required>
         <label for="DOB">Date of birth</label>
@@ -42,7 +42,7 @@
         <label for="FamilyContactName" class="showIfPatientSelected">Emergency Contact Name</label>
         <input type="text" name="FamilyContactName" id="FamilyContactName" class="showIfPatientSelected">
         <label for="FamilyContactNumber" class="showIfPatientSelected">Emergency Contact Phone Number</label>
-        <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="showIfPatientSelected">
+        <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{10}" class="showIfPatientSelected">
         <label for="FamilyRelation" class="showIfPatientSelected">Relation to Patient</label>
         <input type="text" name="FamilyRelation" id="FamilyRelation" class="showIfPatientSelected">
         </div>
