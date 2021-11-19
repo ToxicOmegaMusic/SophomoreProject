@@ -39,7 +39,7 @@
         <label for="FamilyContactName" class="showIfPatientSelected">Emergency Contact Name</label>
         <input type="text" name="FamilyContactName" id="FamilyContactName" class="showIfPatientSelected">
         <label for="FamilyContactNumber" class="showIfPatientSelected">Emergency Contact Phone Number</label>
-        <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{10}" class="showIfPatientSelected">
+        <input type="text" class="phoneNumber" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="showIfPatientSelected">
         <label for="FamilyRelation" class="showIfPatientSelected">Relation to Patient</label>
         <input type="text" name="FamilyRelation" id="FamilyRelation" class="showIfPatientSelected">
         </div>
@@ -61,7 +61,7 @@
 
             $("#userType").trigger("change");
 
-            //document.onload = change();
+            document.onload = change();
 
         </script>
         <script src="makeItAPhoneNumber.js"></script>
