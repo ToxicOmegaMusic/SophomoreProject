@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\caregiver;
+use App\Models\employee;
+use App\Models\family;
 use Carbon\Carbon;
 use App\Models\patient;
 use Illuminate\Http\Request;
@@ -26,19 +29,19 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'userType' => 'required',
-            'fName' => 'required',
-            'lName' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'password' => 'required',
-            'DOB' => 'required',
-            'FamilyPassword' => 'required',
-            'FamilyContactName' => 'required',
-            'FamilyContactNumber' => 'required',
-            'FamilyRelation' => 'required'
-        ]);
+        // $request->validate([
+        //     'userType' => 'required',
+        //     'fName' => 'required',
+        //     'lName' => 'required',
+        //     'email' => 'required',
+        //     'phone' => 'required',
+        //     'password' => 'required',
+        //     'DOB' => 'required',
+        //     'FamilyPassword' => 'required',
+        //     'FamilyContactName' => 'required',
+        //     'FamilyContactNumber' => 'required',
+        //     'FamilyRelation' => 'required'
+        // ]);
 
         switch ($request->userType) {
             case "Patient":
@@ -55,6 +58,44 @@ class RegisterController extends Controller
                 $patient->ec_name = $request->FamilyContactName;
                 $patient->ec_relation = $request->FamilyRelation;
                 $patient->save();
+                break;
+            case "Doctor":
+                $doctor = new employee();
+                $doctor->f_name = $request->fName;
+                $doctor->l_name = $request->lName;
+                $doctor->role_id = 3;
+                $doctor->save();
+                break;
+            // case "Caregiver":
+            //     $Caregiver = new caregiver();
+            //     $Caregiver->f_name = $request->fName;
+            //     $Caregiver->l_name = $request->lName;
+            //     $Caregiver->role_id = 4;
+            //     break;
+            case "Admin":
+                $Admin = new employee();
+                $Admin->f_name = $request->fName;
+                $Admin->l_name = $request->lName;
+                $Admin->role_id = 1;
+                $Admin->save();
+                break;
+            case "Supervisor":
+                $Supervisor = new employee();
+                $Supervisor->f_name = $request->fName;
+                $Supervisor->l_name = $request->lName;
+                $Supervisor->role_id = 2;
+                $Supervisor->save();
+                break;
+            case "Family":
+                $family = new family();
+                $family->family_password = $request->FamilyPassword;
+                $family->f_name = $request->fName;
+                $family->l_name = $request->lName;
+                $family->email = $request->email;
+                $family->phone = $request->phone;
+                $family->password = $request->password;
+                $family->dob = $request->DOB;
+                $family->save();
                 break;
         }
 

@@ -18,4 +18,8 @@ class caregiver extends Model
         'lunch',
         'dinner'
     ];
+
+    public function employee() {
+        return $this->hasOne(employee::class);
+    }
 }

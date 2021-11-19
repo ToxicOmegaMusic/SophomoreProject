@@ -12,7 +12,7 @@
 
     <div>side banner TBD</div>
 
-    <form action="/api/register" method="POST"> <!-- Add action later! -->
+    <form action="http://172.31.109.60:6969/api/register" method="POST"> <!-- Add action later! -->
         <select name="userType" id="userType">
             <option value="Family Member">Family Member</option>
             <option value="Patient" class="ShowExtraFields">Patient</option>
@@ -32,6 +32,8 @@
         <input type="text" class="phoneNumber" id="phone" name="phone" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         <label for="password">Enter a password</label>
         <input type="password" name="password" id="password" required>
+        <label for="DOB">Date Of Birth</label>
+        <input type="date" name='DOB' id='DOB'>
 
         <div id="isPatientSelected">
         <label for="FamilyPassword" class="showIfPatientSelected">Family Password</label>

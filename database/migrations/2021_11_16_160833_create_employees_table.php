@@ -20,7 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('role_id');
-            $table->integer('salary');
+            $table->integer('salary')->nullable();
             $table->timestamps();
         });
     }
