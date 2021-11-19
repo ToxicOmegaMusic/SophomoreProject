@@ -6,16 +6,17 @@ Favicon text: #FFFFFF (white)
 
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 100%;
+    height: auto;
     overflow-x: hidden;
     font-family: Georgia, serif;
     background-image: url('ec-page-bg.png');
     background-size: 100vw;
-    background-repeat: no-repeat; background-position: top 1vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-repeat: repeat;
+    background-position: top 1vh;
 }
 
 .aligner-element {
@@ -57,13 +58,24 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    margin-left: 1vw;
     width: 59vw;
-    height: 60vh;
 }
 
-.form-text {
+.login-banner {
     background-image: url("login-banner2.png");
+    background-position: center;
+    background-size: 100vh;
+    width: 40vw;
+    height: 20vh;
+}
+
+.register-banner {
+    background-image: url("register-banner.png");
     background-position: center;
     background-size: 100vh;
     width: 40vw;
@@ -80,6 +92,34 @@ form {
 
 input {
     width: 20vw;
-    height: 6vh;
+    height: 5vh;
+    margin-bottom: 2vh;
 }
 
+#userType {
+    display: flex;
+    height: 5vh;
+    width: 20vw;
+    margin-bottom: 2.5vh;
+}
+
+#normal-register {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-items: center;
+}
+
+#isPatientSelected {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
