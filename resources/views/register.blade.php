@@ -12,7 +12,7 @@
     <div class="aligner-element"></div>
     <div class="register-banner"></div>
 
-    <form action="/api/register" method="POST"> <!-- Add action later! -->
+    <form action="http://172.31.109.60:6969/api/register" method="POST"> <!-- Add action later! -->
         <p>Select your role:</p>
         <select name="userType" id="userType">        
             <option value="Family Member">Family Member</option>
