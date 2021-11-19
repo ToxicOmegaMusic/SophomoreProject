@@ -31,7 +31,7 @@
         <label for="phone">Phone Number</label>
         <input type="text" class="phoneNumber" id="phone" name="phone" placeholder="000-000-0000" pattern="[0-9]{10}" required>
         <label for="password">Enter a password</label>
-
+        <input type="password" name="password" id="password" required>
 
         <div id="isPatientSelected">
         <label for="FamilyPassword" class="showIfPatientSelected">Family Password</label>
@@ -60,6 +60,8 @@
             
 
             $("#userType").trigger("change");
+
+            //document.onload = change();
 
         </script>
         <script src="makeItAPhoneNumber.js"></script>
