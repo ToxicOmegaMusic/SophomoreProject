@@ -6,6 +6,7 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
 </head>
+
 <body>
 
     <div class="aligner-element"></div>
@@ -13,11 +14,7 @@
 
     <form action="/api/register" method="POST"> <!-- Add action later! -->
         <p>Select your role:</p>
-        <select name="userType" id="userType">
-    
-
-        
-        <select id="userType">
+        <select name="userType" id="userType">        
             <option value="Family Member">Family Member</option>
             <option value="Patient" class="ShowExtraFields">Patient</option>
             <option value="Caregiver">Caregiver</option>
@@ -45,7 +42,7 @@
 
             <div class="input-field-box">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="text" class="phoneNumber" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
             </div>
 
             <div class="input-field-box">
@@ -76,7 +73,7 @@
             
             <div class="input-field-box">
                 <label for="FamilyContactNumber">Emergency Contact Phone Number</label>
-                <input type="tel" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <input type="text" class="phoneNumber" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
             </div>
             
             <div class="input-field-box">
