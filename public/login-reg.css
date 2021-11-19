@@ -13,7 +13,7 @@ body {
     height: auto;
     overflow-x: hidden;
     font-family: Georgia, serif;
-    background-image: url('ec-page-bg.png');
+    background-image: url('ec-bg-page-final.png');
     background-size: 100vw;
     background-repeat: repeat;
     background-position: top 1vh;
@@ -21,6 +21,15 @@ body {
 
 .aligner-element {
     height: 15vh;
+}
+
+.home-redirect {
+    height: 15vh;
+    width: 50vw;
+}
+
+.home-redirect:hover {
+    cursor: grab;
 }
 
 img.resize {
