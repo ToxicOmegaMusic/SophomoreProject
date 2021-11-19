@@ -18,8 +18,7 @@
     </head>
 
     <body>
-
-        <img src="{{ asset('ec-banner2.png') }}" class="resize" style="margin-bottom: 5vh;"/>
+        <img src="{{ asset('ec-home-banner-final.png') }}" class="resize" style="margin-bottom: 5vh;"/>
 
         <div class="menu">
             <button type="button" onclick="window.location.href='/login'">Login</button>

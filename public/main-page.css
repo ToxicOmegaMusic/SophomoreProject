@@ -4,7 +4,6 @@ Favicon background: #006600 (dark green)
 Favicon text: #FFFFFF (white)
 */
 
-
 body {
     max-width: 100%;
     overflow-x: hidden;
@@ -13,6 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #cce0cc;
+    padding: 0vh;
 }
 
 .horizontal-page {
