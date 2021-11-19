@@ -109,7 +109,7 @@ function setupPhoneFields(className){
   for(var i=0; i < lstPhoneFields.length; i++){
     var input = lstPhoneFields[i];
     if(input.type.toLowerCase() == "text"){
-      input.placeholder = "717-867-5309)";
+      input.placeholder = "717-867-5309";
       input.addEventListener("keydown", onKeyDown);
       input.addEventListener("keyup", onKeyUp);
     }
