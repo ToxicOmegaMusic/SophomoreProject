@@ -71,7 +71,7 @@ class RegisterController extends Controller
                 $doctor = new employee();
                 $doctor->f_name = $request->fName;
                 $doctor->l_name = $request->lName;
-                $doctor->role_id = 3;
+                $doctor->role_name = 'Doctor';
                 $doctor->email = $request->email;
                 $doctor->password = $request->password;
                 $doctor->save();
@@ -90,7 +90,7 @@ class RegisterController extends Controller
                 $employee->l_name = $request->lName;
                 $employee->email = $request->email;
                 $employee->password = $request->password;
-                $employee->role_id = 4;
+                $employee->role_name = 'Caregiver';
                 $employee->save();
 
                 $caregiver = new caregiver();
@@ -111,7 +111,7 @@ class RegisterController extends Controller
                 $admin->l_name = $request->lName;
                 $admin->email = $request->email;
                 $admin->password = $request->password;
-                $admin->role_id = 1;
+                $admin->role_name = 'Admin';
                 $admin->save();
                 break;
             case "Supervisor":
@@ -128,7 +128,7 @@ class RegisterController extends Controller
                 $supervisor->l_name = $request->lName;
                 $supervisor->email = $request->email;
                 $supervisor->password = $request->password;
-                $supervisor->role_id = 2;
+                $supervisor->role_name = 'Supervisor';
                 $supervisor->save();
                 break;
             case "Family Member":

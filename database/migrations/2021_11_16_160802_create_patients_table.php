@@ -29,7 +29,7 @@ class CreatePatientsTable extends Migration
             $table->string('ec_phone');
             $table->string('group')->nullable();
             $table->date('admission_date')->nullable();
-            $table->integer('role_id')->default(5);
+            $table->string('role_name')->default('Patient');
             $table->decimal('balance_due', 10, 2)->default(0);
             $table->boolean('approved')->default(0);
             $table->timestamps();
