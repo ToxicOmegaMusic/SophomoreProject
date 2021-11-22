@@ -36,3 +36,7 @@ Route::get('/patient-home', function() {
 Route::get('/doctor-home', function() {
     return view('doctorHome');
 });
+
+Route::get('/tail', function() {
+    return view('tailwind');
+});
