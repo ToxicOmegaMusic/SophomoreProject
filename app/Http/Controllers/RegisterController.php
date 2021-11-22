@@ -29,22 +29,22 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'userType' => 'required',
-        //     'fName' => 'required',
-        //     'lName' => 'required',
-        //     'email' => 'required',
-        //     'phone' => 'required',
-        //     'password' => 'required',
-        //     'DOB' => 'required',
-        //     'FamilyPassword' => 'required',
-        //     'FamilyContactName' => 'required',
-        //     'FamilyContactNumber' => 'required',
-        //     'FamilyRelation' => 'required'
-        // ]);
-
+        $request->validate((['userType' => 'required']));
         switch ($request->userType) {
             case "Patient":
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required',
+                    'DOB' => 'required',
+                    'FamilyPassword' => 'required',
+                    'FamilyContactName' => 'required',
+                    'FamilyContactNumber' => 'required',
+                    'FamilyRelation' => 'required'
+                ]);
+
                 $patient = new patient;
                 $patient->f_name = $request->fName;
                 $patient->l_name = $request->lName;
@@ -60,6 +60,14 @@ class RegisterController extends Controller
                 $patient->save();
                 break;
             case "Doctor":
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required'
+                ]);
+
                 $doctor = new employee();
                 $doctor->f_name = $request->fName;
                 $doctor->l_name = $request->lName;
@@ -69,30 +77,70 @@ class RegisterController extends Controller
                 $doctor->save();
                 break;
             case "Caregiver":
-                $Caregiver = new caregiver();
-                $Caregiver->f_name = $request->fName;
-                $Caregiver->l_name = $request->lName;
-                $Caregiver->role_id = 4;
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required'
+                ]);
+
+                $employee = new employee();
+                $employee->f_name = $request->fName;
+                $employee->l_name = $request->lName;
+                $employee->email = $request->email;
+                $employee->password = $request->password;
+                $employee->role_id = 4;
+                $employee->save();
+
+                $caregiver = new caregiver();
+                $caregiver->employee_id = $employee->id;
+                $caregiver->save();
                 break;
             case "Admin":
-                $Admin = new employee();
-                $Admin->f_name = $request->fName;
-                $Admin->l_name = $request->lName;
-                $Admin->email = $request->email;
-                $Admin->password = $request->password;
-                $Admin->role_id = 1;
-                $Admin->save();
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required'
+                ]);
+
+                $admin = new employee();
+                $admin->f_name = $request->fName;
+                $admin->l_name = $request->lName;
+                $admin->email = $request->email;
+                $admin->password = $request->password;
+                $admin->role_id = 1;
+                $admin->save();
                 break;
             case "Supervisor":
-                $Supervisor = new employee();
-                $Supervisor->f_name = $request->fName;
-                $Supervisor->l_name = $request->lName;
-                $Supervisor->email = $request->email;
-                $Supervisor->password = $request->password;
-                $Supervisor->role_id = 2;
-                $Supervisor->save();
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required'
+                ]);
+
+                $supervisor = new employee();
+                $supervisor->f_name = $request->fName;
+                $supervisor->l_name = $request->lName;
+                $supervisor->email = $request->email;
+                $supervisor->password = $request->password;
+                $supervisor->role_id = 2;
+                $supervisor->save();
                 break;
-            case "Family":
+            case "Family Member":
+                $request->validate([
+                    'fName' => 'required',
+                    'lName' => 'required',
+                    'email' => 'required',
+                    'phone' => 'required',
+                    'password' => 'required',
+                    'DOB' => 'required'
+                ]);
+
                 $family = new family();
                 $family->family_password = $request->FamilyPassword;
                 $family->f_name = $request->fName;
