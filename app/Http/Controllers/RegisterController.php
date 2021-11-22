@@ -64,14 +64,16 @@ class RegisterController extends Controller
                 $doctor->f_name = $request->fName;
                 $doctor->l_name = $request->lName;
                 $doctor->role_id = 3;
+                $doctor->email = $request->email;
+                $doctor->password = $request->password;
                 $doctor->save();
                 break;
-            // case "Caregiver":
-            //     $Caregiver = new caregiver();
-            //     $Caregiver->f_name = $request->fName;
-            //     $Caregiver->l_name = $request->lName;
-            //     $Caregiver->role_id = 4;
-            //     break;
+            case "Caregiver":
+                $Caregiver = new caregiver();
+                $Caregiver->f_name = $request->fName;
+                $Caregiver->l_name = $request->lName;
+                $Caregiver->role_id = 4;
+                break;
             case "Admin":
                 $Admin = new employee();
                 $Admin->f_name = $request->fName;
