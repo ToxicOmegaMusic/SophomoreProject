@@ -78,6 +78,8 @@ class RegisterController extends Controller
                 $Admin = new employee();
                 $Admin->f_name = $request->fName;
                 $Admin->l_name = $request->lName;
+                $Admin->email = $request->email;
+                $Admin->password = $request->password;
                 $Admin->role_id = 1;
                 $Admin->save();
                 break;
@@ -85,6 +87,8 @@ class RegisterController extends Controller
                 $Supervisor = new employee();
                 $Supervisor->f_name = $request->fName;
                 $Supervisor->l_name = $request->lName;
+                $Supervisor->email = $request->email;
+                $Supervisor->password = $request->password;
                 $Supervisor->role_id = 2;
                 $Supervisor->save();
                 break;
