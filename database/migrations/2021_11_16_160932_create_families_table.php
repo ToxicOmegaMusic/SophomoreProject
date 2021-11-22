@@ -21,6 +21,7 @@ class CreateFamiliesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('password');
+            $table->string('role_name')->default('Family Member');
             $table->date('dob');
             $table->timestamps();
         });

@@ -9,7 +9,7 @@ class family extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'family_code',
+        'family_password',
         'f_name',
         'l_name',
         'email',
