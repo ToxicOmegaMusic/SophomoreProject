@@ -30,7 +30,7 @@ Route::get('/login', function() {
 });
 
 Route::get('/patient-home', function() {
-    return view('patientHome');
+    return view('patient-home');
 });
 
 Route::get('/doctor-home', function() {
