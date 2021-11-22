@@ -20,7 +20,47 @@
     <table>
         <tr>
             <td>Doctors Name</td>
-            
+            <td id="doctorsName">doctors name placeholder</td>
+        </tr>
+
+        <tr>
+            <td>Had Doctors appointment?</td>
+            <td id="hadDoctorsAppointment"></td>
+        </tr>
+
+        <tr>
+            <td>Caregivers name</td>
+            <td id="caregiversName"></td>
+        </tr>
+
+        <tr>
+            <td>Had morning medicine?</td>
+            <td id="morningMed"></td>
+        </tr>
+
+        <tr>
+            <td>Had afternoon medicine?</td>
+            <td id="afternoonMed"></td>
+        </tr>
+
+        <tr>
+            <td>Had evening medicine?</td>
+            <td id="eveningMed"></td>
+        </tr>
+
+        <tr>
+            <td>Had breakfast?</td>
+            <td id="breakfast"></td>
+        </tr>
+
+        <tr>
+            <td>Had lunch?</td>
+            <td id="lunch"></td>
+        </tr>
+
+        <tr>
+            <td>Had supper?</td>
+            <td id="supper"></td>
         </tr>
     </table>
 </body>
