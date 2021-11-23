@@ -4,12 +4,12 @@ body {
     align-items: center;
     max-width: 100%;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Removes the pesky HORIZONTAL SCROLL bar */
     font-family: Georgia, serif;
     background-image: url('img/ec-bg-page-final.png');
     background-size: 100vw;
-    background-repeat: repeat;
-    background-position: top 1vh;
+    background-repeat: repeat; /* So it doesn't just stop at the bottom and leave a huge empty space */
+    background-position: top 1vh; /* Centering it */
 }
 
 form {
@@ -21,16 +21,16 @@ form {
 
     padding-top: 2vw;
     padding-bottom: 2vw;
-    margin-left: 1vw;
+    margin-left: 1vw; /* Offsets the element to the right */
     width: 59vw;
 }
 
-.home-redirect {
+.home-redirect { /* Clickable banner at the top takes the user back to the homepage */
     height: 15vh;
     width: 50vw;
 }
 
-.home-redirect:hover {
+.home-redirect:hover { /* Changing the cursor to indicate it's clickable */
     cursor: grab;
 }
 
@@ -44,7 +44,7 @@ table {
     width: 59vw;
 }
 
-tr {
+tr { /* Visually separating the table sections */
     padding: 0.5vh;
     border-bottom: 1px solid #006600;
 }
@@ -52,7 +52,6 @@ tr {
 td {
     display: flex;
     align-items: center;
-
     width: 25vw;
     justify-content: space-between;
 }
@@ -62,7 +61,7 @@ td input[type=text] {
     margin-bottom: 1vh;
 }
 
-tbody {
+tbody { /* Puts a similar border as border1 around the table body--and not the whole table div, which stretches the whole way across the light green area */
     display: flex;
     flex-direction: column;
     border: 2px solid #006600;
@@ -87,7 +86,7 @@ input[type=submit] {
     height: 6vh;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover { /* The cool button club */
     cursor: grab;
     background-color: #009700;
 }
