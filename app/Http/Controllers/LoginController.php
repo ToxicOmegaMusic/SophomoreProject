@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\employee;
+use App\Models\family;
 use App\Models\patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,42 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         if (isset($_GET['sub']) == 'Login')
-            return employee::all();
+        {
+            $flag = 'E';
+            if (DB::table('employees')->where('email', $request->email)->exists())
+                $user = employee::all()->where('email', $request->email);
+            else if (DB::table('patients')->where('email', $request->email)->exists())
+            {
+                $flag = 'P';
+                $user = patient::all()->where('email', $request->email);
+            }
+            else if (DB::table('families')->where('email', $request->email)->exists())
+            {
+                $flag = 'F';
+                $user = family::all()->where('email', $request->email);
+            }
+            else return 'Email not found...';
+
+            if ($request->password == $user[0]->password)
+            {
+                $_SESSION['logged_in'] = true;
+                $_SESSION['type'] = $flag;
+                $_SESSION['id'] = $user[0]->id;
+                switch ($flag)
+                {
+                    case 'E':
+                        return view('welcome');
+                        break;
+                    case 'P':
+                        return view('patient-home');
+                        break;
+                    case 'F':
+                        return view('welcome');
+                        break;
+                }
+            }
+            else return 'Incorrect password!';
+        }
         else return abort(404);
     }
 

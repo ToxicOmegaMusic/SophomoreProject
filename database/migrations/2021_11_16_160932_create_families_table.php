@@ -14,7 +14,7 @@ class CreateFamiliesTable extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->id('family_id');
+            $table->id();
             $table->string('family_password')->nullable();
             $table->string('f_name');
             $table->string('l_name');

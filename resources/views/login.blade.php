@@ -11,7 +11,7 @@
     <form action="http://172.31.109.60:6969/api/login" method="GET"> 
         <div class="login-banner"></div>
 
-        <input type="text" name="username" placeholder="email"/>
+        <input type="text" name="email" placeholder="email"/>
 
         <input type="password" name="password" placeholder="password"/>
 

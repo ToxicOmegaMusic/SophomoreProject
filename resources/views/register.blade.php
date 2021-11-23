@@ -42,7 +42,7 @@
 
             <div class="input-field-box">
                 <label for="phone">Phone Number</label>
-                <input type="text" class="phoneNumber" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="text" class="phoneNumber" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" required>
             </div>
 
             <div class="input-field-box">
@@ -73,7 +73,7 @@
             
             <div class="input-field-box">
                 <label for="FamilyContactNumber">Emergency Contact Phone Number</label>
-                <input type="text" class="phoneNumber" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <input type="text" class="phoneNumber" name="FamilyContactNumber" id="FamilyContactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
             </div>
             
             <div class="input-field-box">
