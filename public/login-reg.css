@@ -29,7 +29,7 @@ body {
 }
 
 .home-redirect:hover { /* Indicates it's clickable */
-    cursor: grab;
+    cursor: pointer;
 }
 
 img.resize { /* So the image doesn't look all wonky */
@@ -58,7 +58,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover { /* The cool button club */
-    cursor: grab;
+    cursor: pointer;
     background-color: #009700;
 }
 

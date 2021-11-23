@@ -31,7 +31,7 @@ form {
 }
 
 .home-redirect:hover { /* Changing the cursor to indicate it's clickable */
-    cursor: grab;
+    cursor: pointer;
 }
 
 table {
@@ -87,6 +87,6 @@ input[type=submit] {
 }
 
 input[type=submit]:hover { /* The cool button club */
-    cursor: grab;
+    cursor: pointer;
     background-color: #009700;
 }

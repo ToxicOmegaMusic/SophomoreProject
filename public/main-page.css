@@ -45,7 +45,7 @@ img.resize {
 
 button:hover { /* The cool buttons club */
     background-color: #009700;
-    cursor: grab;
+    cursor: pointer;
 }
 
 form {
