@@ -6,7 +6,7 @@ body {
     height: auto;
     overflow-x: hidden;
     font-family: Georgia, serif;
-    background-image: url('ec-bg-page-final.png');
+    background-image: url('img/ec-bg-page-final.png');
     background-size: 100vw;
     background-repeat: repeat;
     background-position: top 1vh;
@@ -40,19 +40,33 @@ table {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
     margin-left: 1vw;
     width: 59vw;
+}
+
+tr {
+    padding: 0.5vh;
+    border-bottom: 1px solid #006600;
 }
 
 td {
     display: flex;
     align-items: center;
 
-    border-bottom: 1px solid red;
     width: 25vw;
     justify-content: space-between;
+}
+
+td input[type=text] {
+    display: flex;
+    margin-bottom: 1vh;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #006600;
+    margin-bottom: 3vh;
 }
 
 .border1 {
@@ -63,4 +77,17 @@ td {
     height: 30vh;
 
     padding: 2vh;
+}
+
+input[type=submit] {
+    background-color: #006600;
+    color: white;
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    height: 6vh;
+}
+
+input[type=submit]:hover {
+    cursor: grab;
+    background-color: #009700;
 }

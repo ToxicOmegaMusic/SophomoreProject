@@ -11,78 +11,87 @@
 
     <form>
         <div class="border1">
+            
             <label for="patient-id">Patient ID</label>
             <input type="text" name="patient-id" id="patientID" required>
-
+            
             <label for="patient-name">Patient Name</label>
             <input type="text" name="patient-name" id="patient-name" required>
-
+            
             <label for="date">Date</label>
             <input type="date" name="date" id="date" required>
+            
         </div>
     </form>
     
     <table>
-            <tr>
-                <td>
-                    <input type="text" name="doctor-name" placeholder="Doctor's name">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <input type="text" name="doctor-name" placeholder="Doctor's name">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <input type="text" name="caregiver-name" placeholder="Caregiver's name">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <input type="text" name="caregiver-name" placeholder="Caregiver's name">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Did you have the appointment?</p>
-                    <input type="checkbox" id="had-appt">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Did you have the appointment?</p>
+                <input type="checkbox" id="had-appt">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Took morning medicine</p>
-                    <input type="checkbox" id="took-morning-meds">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Took morning medicine</p>
+                <input type="checkbox" id="took-morning-meds">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Took afternoon medicine</p>
-                    <input type="checkbox" id="took-afternoon-meds">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Took afternoon medicine</p>
+                <input type="checkbox" id="took-afternoon-meds">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Took evening medicine</p>
-                    <input type="checkbox" id="took-evening-meds">
+        <tr>
+            <td>
+                <p>Took evening medicine</p>
+                <input type="checkbox" id="took-evening-meds">
                 </td>
-            </tr>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Had breakfast</p>
-                    <input type="checkbox" id="had-breakfast">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Had breakfast</p>
+                <input type="checkbox" id="had-breakfast">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Had lunch</p>
-                    <input type="checkbox" id="had-lunch">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Had lunch</p>
+                <input type="checkbox" id="had-lunch">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <p>Had dinner</p>
-                    <input type="checkbox" id="had-dinner">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>Had dinner</p>
+                <input type="checkbox" id="had-dinner">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="display: flex; justify-content: center;">
+                <input type="submit" name="sub">
+            </td>
+        </tr>
+
     </table>
 
 </body>
