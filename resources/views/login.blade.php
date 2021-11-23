@@ -8,7 +8,7 @@
 
 <div class="home-redirect" onclick="location.href='/';"></div> <!-- This makes me a certified HACKER -->
 
-    <form action="http://172.31.109.60:6969/api/login" method="POST"> <!-- Add action later! -->
+    <form action="http://172.31.109.60:6969/api/login" method="GET"> 
         <div class="login-banner"></div>
 
         <input type="text" name="username" placeholder="email"/>
