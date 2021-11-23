@@ -17,11 +17,6 @@ body {
     margin-top: 0px;
 }
 
-.horizontal-page {
-    display: flex;
-    
-}
-
 img.resize {
     display: flex;
     margin: 0vw;
@@ -48,7 +43,7 @@ img.resize {
     font-family: Georgia, serif;
 }
 
-button:hover {
+button:hover { /* The cool buttons club */
     background-color: #009700;
     cursor: grab;
 }

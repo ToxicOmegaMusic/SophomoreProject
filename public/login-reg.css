@@ -19,7 +19,7 @@ body {
     background-position: top 1vh;
 }
 
-.aligner-element {
+.aligner-element { /* Invisible element to help center things vertically because I'm smart */
     height: 15vh;
 }
 
@@ -28,11 +28,11 @@ body {
     width: 50vw;
 }
 
-.home-redirect:hover {
+.home-redirect:hover { /* Indicates it's clickable */
     cursor: grab;
 }
 
-img.resize {
+img.resize { /* So the image doesn't look all wonky */
     display: flex;
     margin: 0vw;
     width: 100vw;
@@ -57,7 +57,7 @@ input[type=submit] {
     height: 6vh;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover { /* The cool button club */
     cursor: grab;
     background-color: #009700;
 }
@@ -126,7 +126,7 @@ input {
     align-items: center;
 }
 
-.input-field-box {
+.input-field-box { /* These contain the input fields and their associated paragraph elements */
     display: flex;
     flex-direction: column;
     margin-top: 1vh;
