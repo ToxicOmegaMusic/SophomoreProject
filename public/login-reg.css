@@ -13,7 +13,7 @@ body {
     height: auto;
     overflow-x: hidden;
     font-family: Georgia, serif;
-    background-image: url('ec-bg-page-final.png');
+    background-image: url('img/ec-bg-page-final.png');
     background-size: 100vw;
     background-repeat: repeat;
     background-position: top 1vh;
@@ -76,7 +76,7 @@ form {
 }
 
 .login-banner {
-    background-image: url("login-banner2.png");
+    background-image: url("img/login-banner2.png");
     background-position: center;
     background-size: 100vh;
     width: 40vw;
@@ -84,7 +84,7 @@ form {
 }
 
 .register-banner {
-    background-image: url("register-banner.png");
+    background-image: url("img/register-banner.png");
     background-position: center;
     background-size: 100vh;
     width: 40vw;

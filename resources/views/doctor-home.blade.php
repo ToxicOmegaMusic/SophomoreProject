@@ -8,32 +8,36 @@
 </head>
 <body>
     <div class="home-redirect" onclick="location.href='/';"></div>
+    
     <div class="fixedHeight">
         <form>
-        <label for="filterBy">Filter  by:</label>
+            <label for="filterBy">Filter by:</label>
+            
+            <select name="filterBy" id="filterBy">        
+                <option value="patientName">Patient Name</option>
+                <option value="date">Date</option>
+                <option value="comment">Comment</option>
+                <option value="morningMedicine">Morning Medicine</option>
+                <option value="afternoonMedicine">Afternoon Medicine</option>
+                <option value="eveningMedicine">Evening Medicine</option>
+            </select>
+
+            <input name="patientName" id="patientName" type="text" placeholder="Name of Patient">
+
+            <input name="date" id="date" type="date">
+
+            <input name="comment" id="comment" type="text" placeholder="Comments">
+
+            <input name="morningMed" id="morningMedicine" type="text" placeholder="Morning Medicine">
+
+            <input name="afternoonMed" id="afternoonMedicine" type="text" placeholder="Afternoon Medicine">
+
+            <input name="eveningMed" id="eveningMedicine" type="text" placeholder="Evening Medicine">
         
-        <select name="filterBy" id="filterBy">        
-            <option value="patientName">Patient Name</option>
-            <option value="date">Date</option>
-            <option value="comment">Comment</option>
-            <option value="morningMedicine">Morning Medicine</option>
-            <option value="afternoonMedicine">Afternoon Medicine</option>
-            <option value="eveningMedicine">Evening Medicine</option>
-        </select>
-
-        <input name="patientName" id="patientName" type="text">
-        <input name="date" id="date" type="date">
-        <input name="comment" id="comment" type="text">
-        <input name="morningMed" id="morningMedicine" type="text">
-        <input name="afternoonMed" id="afternoonMedicine" type="text">
-        <input name="eveningMed" id="eveningMedicine" type="text">
-        
-
-
         </form>
 
         <table>
-            <tr>
+            <tr class="headings">
                 <th>Patient Name</th>
                 <th>Date</th>
                 <th>Comment</th>

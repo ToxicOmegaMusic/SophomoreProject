@@ -132,3 +132,28 @@ input {
     margin-top: 1vh;
     margin-bottom: 2vh;
 }
+
+table {
+    background-color: #E2F9E2;
+    width: 60vw;
+}
+
+tbody {
+    overflow: auto; /* This isn't working for some reason. */
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #006600;
+}
+
+tr.headings th {
+    border-right: 1px solid #006600;
+    width: 15vw;
+}
+
+td {
+    border-right: 1px solid #006600;
+    width: 15vw;
+}

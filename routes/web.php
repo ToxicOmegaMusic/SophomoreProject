@@ -25,6 +25,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/doctorhp', function () {
+Route::get('/doctor-home', function () {
     return view('doctor-home');
 });
