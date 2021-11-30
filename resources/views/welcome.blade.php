@@ -1,8 +1,3 @@
-<!--
-<link rel="stylesheet" type="text/css" href="{{ asset('main-page.css') }}"/>
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,15 +8,18 @@
 
         <link rel="icon" href="/favicon.ico">
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('main-page.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
 
     </head>
 
     <body>
-        <img src="{{ asset('img/ec-home-banner-final.png') }}" class="resize" style="margin-bottom: 5vh;"/>
+
+        <div class="home-banner">Eranthis<br/>Communities</div>
 
         <div class="menu">
+
             <button type="button" onclick="window.location.href='/login'">Login</button>
+
             <button type="button" onclick="window.location.href='/register'">Register</button>
         </div>
 

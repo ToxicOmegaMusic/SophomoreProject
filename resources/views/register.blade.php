@@ -3,17 +3,20 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
 </head>
 
-<body>
+<body class="login-reg">
 
-    <div class="home-redirect" onclick="location.href='/';"></div> <!-- This makes me a certified HACKER -->
+    <div class="home-banner" onclick="location.href='/';">Eranthis<br/>Communities</div> <!-- This makes me a certified HACKER -->
 
-    <form action="http://172.31.109.60:6969/api/register" method="POST"> <!-- Add action later! -->
+    <form action="http://172.31.109.60:6969/api/register" method="POST" class="menu" style="height: auto; padding: 3vh;">
+
         <div class="register-banner"></div>
-        <p>Select your role:</p>
+
+        <p style="font-size: 1.4em;">Select your role:</p>
         <select name="userType" id="userType">        
             <option value="Family Member">Family Member</option>
             <option value="Patient" class="ShowExtraFields">Patient</option>
@@ -83,7 +86,7 @@
 
         </div>
 
-        <input type="submit" name="sub" style="background-color: #006600; color: white; font-size: 1.5em; font-family: Georgia, serif;"/>
+        <input type="submit" name="sub" style="background-color: #006600; color: white; font-size: 1.7em; font-family: Georgia, serif; height: 12vh;"/>
     </form>
 
     <div class="aligner-element"></div>

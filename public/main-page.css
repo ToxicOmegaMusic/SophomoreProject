@@ -5,19 +5,21 @@ Favicon text: #FFFFFF (white)
 */
 
 body {
-    max-width: 100%;
-    overflow-x: hidden;
-    font-family: Georgia, serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #cce0cc;
+
     padding: 0vh;
     margin-top: 0px; /* To remove the pesky little blank space at the top of the homepage. */
+    margin-top: 0px;
+
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Georgia, serif;
+    background-color: #cce0cc;
+    
 }
 
-    margin-top: 0px;
-}
 
 img.resize {
     display: flex;

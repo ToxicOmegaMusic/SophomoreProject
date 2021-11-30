@@ -6,13 +6,7 @@ Favicon text: #FFFFFF (white)
 
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
     height: auto;
-    overflow-x: hidden;
-    font-family: Georgia, serif;
     background-image: url('img/ec-bg-page-final.png');
     background-size: 100vw;
     background-repeat: repeat;
