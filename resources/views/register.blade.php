@@ -96,8 +96,11 @@
 <script src="makeItAPhoneNumber.js"></script>
 
 <script>
+    $("#userType").change(displayExtras).change();//when the page loads, run displayExtras once
 
-    $("#userType").change(function() {
+    $("#userType").change(displayExtras);//every time a new option is selected from the dropdown...
+
+    function displayExtras(){//show the extra fields based on wether or not the dropdown option selected is patient
         if ($(this).val() == "Patient") {
             $('#isPatientSelected').show();
             $('#isPatientSelected').attr('required', '');
@@ -106,7 +109,7 @@
             $('#isPatientSelected').hide();
             $('#isPatientSelected').removeAttr('required');
         }
-    });
+    }
             
     $("#userType").trigger("change");
 
