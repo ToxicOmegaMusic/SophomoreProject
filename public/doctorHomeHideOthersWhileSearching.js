@@ -1,5 +1,11 @@
-$("#filterBy").change(function() {
-        if ($(this).val() == "patientName") {
+$("#filterBy").change(hideOthers).change();//run this code once when the page loads
+
+$("#filterBy").change(function() {//every time a new option is selected...
+   hideOthers();
+});
+
+function hideOthers(){//give the user the correct field to fill out based on their selection in the filter by dropdown
+    if ($(this).val() == "patientName") {
             $('#patientName').show();
             $('#patientName').attr('required', '');
         }
@@ -52,7 +58,4 @@ $("#filterBy").change(function() {
             $('#eveningMedicine').hide();
             $('#eveningMedicine').removeAttr('required');
         }
-    });
-            
-
-    $("#userType").trigger("change");
+}

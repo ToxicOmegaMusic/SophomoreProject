@@ -5,6 +5,8 @@
     <title>Doctor Homepage</title>
     <link rel="icon" href="/favicon.ico">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+
 </head>
 <body>
     <div class="home-redirect" onclick="location.href='/';"></div>
@@ -67,8 +69,33 @@
     <div>
 
 
+
+    <div class="appointmentSearchBarByDate">
+        Upcoming Appointments
+        <form>
+        <input type="date">
+        <input type="submit">
+
+    </div>
+
+
+    <table>
+        <tr class="heading">
+            <th>Patient Name</th>
+            <th>Appointment date</th>
+        </tr>
+    </table>
+
+
 </body>
 
+
 <script src="doctorHomeHIdeOthersWhileSearching.js"></script>
+
+
+<script>
+    //window.onload
+</script>
+
 
 </html>
