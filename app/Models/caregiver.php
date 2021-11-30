@@ -9,6 +9,7 @@ class caregiver extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'employee_id',
         'patient_id',
         'date',
         'morning_med',
@@ -18,8 +19,4 @@ class caregiver extends Model
         'lunch',
         'dinner'
     ];
-
-    public function employee() {
-        return $this->hasOne(employee::class);
-    }
 }

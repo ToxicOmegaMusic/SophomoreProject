@@ -25,6 +25,15 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/doctor-home', function () {
-    return view('doctor-home');
+
+Route::get('/patient-home', function() {
+    return view('patient-home');
+});
+
+Route::get('/doctor-home', function() {
+    return view('doctorHome');
+});
+
+Route::get('/tail', function() {
+    return view('tailwind');
 });

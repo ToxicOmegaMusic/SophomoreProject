@@ -14,13 +14,14 @@ class CreateFamiliesTable extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->id('family_id');
-            $table->string('family_password');
+            $table->id();
+            $table->string('family_password')->nullable();
             $table->string('f_name');
             $table->string('l_name');
             $table->string('email');
             $table->string('phone');
             $table->string('password');
+            $table->string('role_name')->default('Family Member');
             $table->date('dob');
             $table->timestamps();
         });

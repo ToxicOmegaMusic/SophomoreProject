@@ -16,9 +16,7 @@ body {
     margin-top: 0px; /* To remove the pesky little blank space at the top of the homepage. */
 }
 
-.horizontal-page {
-    display: flex;
-    
+    margin-top: 0px;
 }
 
 img.resize {
@@ -47,9 +45,9 @@ img.resize {
     font-family: Georgia, serif;
 }
 
-button:hover {
+button:hover { /* The cool buttons club */
     background-color: #009700;
-    cursor: grab;
+    cursor: pointer;
 }
 
 form {
