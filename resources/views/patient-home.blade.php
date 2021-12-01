@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <title>Caregiver Home</title>
+    <title>Patient Home</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
 </head>
 
@@ -13,10 +13,10 @@
         <div class="border1">
             
             <label for="patient-id">Patient ID</label>
-            <input type="text" name="patient-id" id="patientID">
+            <input type="text" name="patient-id" id="patientID" disabled>
             
             <label for="patient-name">Patient Name</label>
-            <input type="text" name="patient-name" id="patient-name">
+            <input type="text" name="patient-name" id="patient-name" disabled>
             
             <label for="date">Date</label>
             <input type="date" name="date" id="date" required>
@@ -28,68 +28,62 @@
     <table>
         <tr>
             <td>
-                <input type="text" name="doctor-name" placeholder="Doctor's name">
+                <span name="doctor-name">Dr. Mario</span>
             </td>
         </tr>
 
         <tr>
             <td>
-                <input type="text" name="caregiver-name" placeholder="Caregiver's name">
+                <span name="caregiver-name">Lindsey Jacobs</span>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Did you have the appointment?</p>
-                <input type="checkbox" id="had-appt">
+                <input type="checkbox" id="had-appt" disabled>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Took morning medicine</p>
-                <input type="checkbox" id="took-morning-meds">
+                <input type="checkbox" id="took-morning-meds" disabled>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Took afternoon medicine</p>
-                <input type="checkbox" id="took-afternoon-meds">
+                <input type="checkbox" id="took-afternoon-meds" disabled>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Took evening medicine</p>
-                <input type="checkbox" id="took-evening-meds">
+                <input type="checkbox" id="took-evening-meds" disabled>
                 </td>
         </tr>
 
         <tr>
             <td>
                 <p>Had breakfast</p>
-                <input type="checkbox" id="had-breakfast">
+                <input type="checkbox" id="had-breakfast" disabled>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Had lunch</p>
-                <input type="checkbox" id="had-lunch">
+                <input type="checkbox" id="had-lunch" disabled>
             </td>
         </tr>
 
         <tr>
             <td>
                 <p>Had dinner</p>
-                <input type="checkbox" id="had-dinner">
-            </td>
-        </tr>
-
-        <tr>
-            <td style="display: flex; justify-content: center;">
-                <input type="submit" name="sub">
+                <input type="checkbox" id="had-dinner" disabled>
             </td>
         </tr>
 

@@ -36,3 +36,11 @@ Route::get('/doctor-home', function() {
 Route::get('/tail', function() {
     return view('tailwind');
 });
+
+Route::get('/patient-home', function() {
+    return view('patient-home');
+});
+
+Route::get('/payment', function(){
+    return view('payment');
+});
