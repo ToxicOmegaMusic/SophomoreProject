@@ -34,6 +34,7 @@ class LoginController extends Controller
             else return 'Email not found...';
             if ($request->password == $user->password)
             {
+                session_start();
                 $_SESSION['logged_in'] = true;
                 $_SESSION['type'] = $flag;
                 $_SESSION['id'] = $user->id;

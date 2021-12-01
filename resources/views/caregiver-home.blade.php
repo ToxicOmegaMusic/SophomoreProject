@@ -1,3 +1,7 @@
+@php
+    session_start();
+@endphp
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
