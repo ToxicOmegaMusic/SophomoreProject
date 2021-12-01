@@ -42,13 +42,13 @@ class LoginController extends Controller
                 switch ($flag)
                 {
                     case 'E':
-                        return view('welcome');
+                        return redirect('welcome');
                         break;
                     case 'P':
-                        return view('patient-home');
+                        return redirect('patient-home');
                         break;
                     case 'F':
-                        return view('welcome');
+                        return redirect('welcome');
                         break;
                 }
             }

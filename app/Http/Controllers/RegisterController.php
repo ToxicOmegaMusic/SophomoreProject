@@ -63,7 +63,7 @@ class RegisterController extends Controller
                     $patient->ec_name = $request->FamilyContactName;
                     $patient->ec_relation = $request->FamilyRelation;
                     $patient->save();
-                    return view('patient-home');
+                    return redirect('login');
                     break;
 
                 case "Doctor":

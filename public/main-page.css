@@ -13,6 +13,8 @@ body {
     align-items: center;
     background-color: #cce0cc;
     padding: 0vh;
+    margin-top: 0px; /* To remove the pesky little blank space at the top of the homepage. */
+}
 
     margin-top: 0px;
 }
@@ -45,7 +47,7 @@ img.resize {
 
 button:hover { /* The cool buttons club */
     background-color: #009700;
-    cursor: grab;
+    cursor: pointer;
 }
 
 form {
