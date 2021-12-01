@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="home-banner" onclick="location.href='/';">Eranthis<br/>Communities</div>
+    <div class="home-banner" onclick="location.href='/'">Eranthis<br/>Communities</div>
 
     <form id="login-form" action="http://172.31.109.60:6969/api/login" method="GET" class="menu"> 
         <div class="login-banner"></div>

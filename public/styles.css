@@ -1,5 +1,5 @@
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
 
     body {
         display: flex;
@@ -8,7 +8,7 @@
         margin-top: 0vh;
         x-overflow: hidden;
 
-        background-color: red;
+        background-color: #70AF70;
     }
 
     .home-banner {
@@ -56,15 +56,9 @@
         color: white;
     }
 
-/*
-    #login-form {
-        background-color: #E2F9E2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+    #login-form input[type=submit] {
+        height: 12vh;
     }
-*/
 
     input {
         display: flex;
@@ -117,21 +111,59 @@
 
 }
 
+/*
+The only real differences between pages on desktop are the background images.
 
-/* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+Just do inline styling for that.
 
-    body {
-        background-color: green;
-    }
+*/
 
-}
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
 
     body {
-        background-color: blue;
+        background-image: url('img/ec-bg-page-final.png');
+
+        background-size: 100vw;
+        background-repeat: repeat;
+        background-position: top 1vh;
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 0vh;
+        margin-top: 0px; /* To remove the pesky little blank space at the top of the homepage. */
+        margin-top: 0px;
+
+        max-width: 100%;
+        overflow-x: hidden;
+        font-family: Georgia, serif;
+    }
+
+    .home-banner {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 25vh;
+        margin-bottom: 4vh;
+
+        /*background-color: #006600;
+        color: white;
+
+        font-size: 3em;
+        font-family: Georgia, serif;*/
+        opacity: 0;
+
+    }
+
+    .home-banner:hover {
+        cursor: pointer;
     }
 
     .menu {
@@ -173,5 +205,7 @@
         width: 20vw;
         height: 6vh;
     }
+
+  
 
 }
