@@ -16,6 +16,13 @@ class CaregiverMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+
+        session_start();
+        if(!isset($_SESSION['logged_in'])) {
+            return redirect(view('login')->with('error', 'Not Logged-In'));
+        } else {
+            return 'else ran';
+        }
         return $next($request);
     }
 }

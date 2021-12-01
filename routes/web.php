@@ -25,14 +25,17 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/caregiver-home', function() {
-    return view('caregiver-home');
-});
-
 Route::get('/doctor-home', function() {
     return view('doctor-home');
 });
 
 Route::get('/tail', function() {
     return view('tailwind');
+});
+
+
+Route::middleware(['App\Http\Middleware\CaregiverMiddleware'])->group(function () {
+    Route::get('/caregiver-home', function() {
+        return view('caregiver-home');
+    });
 });

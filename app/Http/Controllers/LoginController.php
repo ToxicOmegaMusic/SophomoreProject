@@ -36,6 +36,7 @@ class LoginController extends Controller
 
             if ($request->password == $user[0]->password)
             {
+                session_start();
                 $_SESSION['logged_in'] = true;
                 $_SESSION['type'] = $flag;
                 $_SESSION['id'] = $user[0]->id;
