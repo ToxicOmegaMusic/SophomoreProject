@@ -42,7 +42,20 @@ class LoginController extends Controller
                 switch ($flag)
                 {
                     case 'E':
-                        return redirect('welcome');
+                        switch ($user[0]->role_name) {
+                            case 'Caregiver':
+                                return redirect('caregiver-home');
+                                break;
+                            case 'Admin':
+                                return redirect('admin-home');
+                                break;
+                            case 'Doctor':
+                                return redirect('doctor-home');
+                                break;
+                            case 'Supervisor':
+                                return redirect('supervisor-home');
+                                break;
+                        }
                         break;
                     case 'P':
                         return redirect('patient-home');
