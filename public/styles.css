@@ -109,6 +109,13 @@
         color: white;
     }
 
+    #isPatientSelected {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        align-items: center;
+    }
+
 }
 
 /*
@@ -204,6 +211,56 @@ Just do inline styling for that.
     input {
         width: 20vw;
         height: 6vh;
+    }
+
+
+    input[type=submit] {
+        background-color: #006600;
+        color: white;
+        font-size: 1.5em;
+        font-family: Georgia, serif;
+        height: 8vh;
+    }
+
+
+/* From login-reg.css file */
+
+    .form-text p {
+        margin: 1vh;
+    }
+
+    input {
+        width: 20vw;
+        height: 5vh;
+        margin-bottom: 2vh;
+    }
+
+    #userType {
+        display: flex;
+        height: 5vh;
+        width: 20vw;
+        margin-bottom: 2.5vh;
+    }
+
+    #normal-register {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        align-items: center;
+    }
+
+    #isPatientSelected {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        align-items: center;
+    }
+
+    .input-field-box { /* These contain the input fields and their associated paragraph elements */
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vh;
+        margin-bottom: 2vh;
     }
 
   
