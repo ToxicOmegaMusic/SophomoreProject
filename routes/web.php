@@ -40,3 +40,7 @@ Route::get('/tail', function() {
 Route::get('/patient-home', function() {
     return view('patient-home');
 });
+
+Route::get('/payment', function(){
+    return view('payment');
+});
