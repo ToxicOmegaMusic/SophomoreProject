@@ -6,7 +6,6 @@ use App\Models\employee;
 use App\Models\family;
 use App\Models\patient;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -20,29 +19,28 @@ class LoginController extends Controller
         if (isset($_GET['sub']) == 'Login')
         {
             $flag = 'E';
-            if (DB::table('employees')->where('email', $request->email)->exists())
-                $user = employee::all()->where('email', $request->email);
-            else if (DB::table('patients')->where('email', $request->email)->exists())
+            if (employee::whereEmail($request->email)->exists())
+                $user = employee::whereEmail($request->email)->first();
+            else if (patient::whereEmail($request->email)->exists())
             {
                 $flag = 'P';
-                $user = patient::all()->where('email', $request->email);
+                $user = patient::whereEmail($request->email)->first();
             }
-            else if (DB::table('families')->where('email', $request->email)->exists())
+            else if (family::whereEmail($request->email)->exists())
             {
                 $flag = 'F';
-                $user = family::all()->where('email', $request->email);
+                $user = family::whereEmail($request->email)->first();
             }
             else return 'Email not found...';
-
-            if ($request->password == $user[0]->password)
+            if ($request->password == $user->password)
             {
                 $_SESSION['logged_in'] = true;
                 $_SESSION['type'] = $flag;
-                $_SESSION['id'] = $user[0]->id;
+                $_SESSION['id'] = $user->id;
                 switch ($flag)
                 {
                     case 'E':
-                        switch ($user[0]->role_name) {
+                        switch ($user->role_name) {
                             case 'Caregiver':
                                 return redirect('caregiver-home');
                                 break;
