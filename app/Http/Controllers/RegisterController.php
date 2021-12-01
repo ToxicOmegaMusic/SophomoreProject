@@ -65,6 +65,7 @@ class RegisterController extends Controller
                     $patient->save();
                     return redirect('login');
                     break;
+
                 case "Doctor":
                     $request->validate([
                         'fName' => 'required',
@@ -82,6 +83,7 @@ class RegisterController extends Controller
                     $doctor->password = $request->password;
                     $doctor->save();
                     break;
+
                 case "Caregiver":
                     $request->validate([
                         'fName' => 'required',
@@ -102,7 +104,9 @@ class RegisterController extends Controller
                     $caregiver = new caregiver();
                     $caregiver->employee_id = $employee->id;
                     $caregiver->save();
+                    return view('caregiver-home');
                     break;
+
                 case "Admin":
                     $request->validate([
                         'fName' => 'required',
@@ -120,6 +124,7 @@ class RegisterController extends Controller
                     $admin->role_name = 'Admin';
                     $admin->save();
                     break;
+
                 case "Supervisor":
                     $request->validate([
                         'fName' => 'required',
@@ -137,6 +142,7 @@ class RegisterController extends Controller
                     $supervisor->role_name = 'Supervisor';
                     $supervisor->save();
                     break;
+
                 case "Family Member":
                     $request->validate([
                         'fName' => 'required',

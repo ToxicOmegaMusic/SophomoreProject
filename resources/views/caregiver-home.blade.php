@@ -13,14 +13,15 @@
         <div class="border1">
             
             <label for="patient-id">Patient ID</label>
-            <input type="text" name="patient-id" id="patientID" required>
+            <input type="text" name="patient-id" id="patientID" disabled>
             
             <label for="patient-name">Patient Name</label>
-            <input type="text" name="patient-name" id="patient-name" required>
+            <input type="text" name="patient-name" id="patient-name" disabled>
             
             <label for="date">Date</label>
             <input type="date" name="date" id="date" required>
             
+            <button type="submit">Search</button>
         </div>
     </form>
     
