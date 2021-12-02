@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Patient Home</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
 </head>
 
 <body>
 
-    <div class="home-redirect"></div>
+    <div class="home-banner" onclick="location.href='/'">Eranthis<br/>Communities</div>
 
     <form>
         <div class="border1">
             
-            <label for="patient-id">Patient ID</label>
-            <input type="text" name="patient-id" id="patientID" required>
-            
-            <label for="patient-name">Patient Name</label>
-            <input type="text" name="patient-name" id="patient-name" required>
-            
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date" required>
+            <input type="text" name="patient-id" id="patientID" class="patient-home-input" placeholder="Patient ID" required>
+
+            <input type="text" name="patient-name" id="patient-name" class="patient-home-input" placeholder="Patient Name" required>
+        
+            <input type="date" name="date" id="date" class="patient-home-input" required>
             
         </div>
     </form>
     
-    <table>
+    <table class="menu" style="height: auto;">
         <tr>
-            <td>
-                <input type="text" name="doctor-name" placeholder="Doctor's name">
+            <td class="divided no-skinny-divving">
+                <input type="text" name="doctor-name" placeholder="Doctor's name" class="patient-home-input">
             </td>
         </tr>
 
         <tr>
-            <td>
-                <input type="text" name="caregiver-name" placeholder="Caregiver's name">
+            <td class="divided no-skinny-divving">
+                <input type="text" name="caregiver-name" placeholder="Caregiver's name" class="patient-home-input">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Did you have the appointment?</p>
                 <input type="checkbox" id="had-appt">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Took morning medicine</p>
                 <input type="checkbox" id="took-morning-meds">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Took afternoon medicine</p>
                 <input type="checkbox" id="took-afternoon-meds">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Took evening medicine</p>
                 <input type="checkbox" id="took-evening-meds">
                 </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Had breakfast</p>
                 <input type="checkbox" id="had-breakfast">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Had lunch</p>
                 <input type="checkbox" id="had-lunch">
             </td>
         </tr>
 
         <tr>
-            <td>
+            <td class="divided">
                 <p>Had dinner</p>
                 <input type="checkbox" id="had-dinner">
             </td>
@@ -88,7 +87,7 @@
 
         <tr>
             <td style="display: flex; justify-content: center;">
-                <input type="submit" name="sub">
+                <input type="submit" name="sub" class="no-skinny-divving">
             </td>
         </tr>
 

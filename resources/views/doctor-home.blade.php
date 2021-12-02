@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
     <title>Doctor Homepage</title>
     <link rel="icon" href="/favicon.ico">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
-    <div class="home-redirect" onclick="location.href='/';"></div>
+    <div class="home-banner" onclick="location.href='/';">Eranthis<br/>Communities</div>
     
     <div class="fixedHeight">
         <form>
             <label for="filterBy">Filter by:</label>
             
-            <select name="filterBy" id="filterBy">        
+            <select name="filterBy" id="filterBy">      
                 <option value="patientName">Patient Name</option>
                 <option value="date">Date</option>
                 <option value="comment">Comment</option>
@@ -69,6 +71,6 @@
 
 </body>
 
-<script src="doctorHomeHIdeOthersWhileSearching.js"></script>
+<script src="doctorHomeHideOthersWhileSearching.js"></script>
 
 </html>

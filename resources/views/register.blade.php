@@ -10,7 +10,7 @@
 
 <body class="login-reg">
 
-    <div class="home-banner" onclick="location.href='/';">Eranthis<br/>Communities</div> <!-- This makes me a certified HACKER -->
+    <div class="home-banner" onclick="location.href='/'">Eranthis<br/>Communities</div> <!-- This makes me a certified HACKER -->
 
     <form action="http://172.31.109.60:6969/api/register" method="POST" class="menu" style="height: auto; padding: 3vh;">
 

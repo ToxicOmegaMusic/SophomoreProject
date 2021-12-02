@@ -16,9 +16,9 @@
     <form id="login-form" action="http://172.31.109.60:6969/api/login" method="GET" class="menu"> 
         <div class="login-banner"></div>
 
-        <input type="text" name="email" placeholder="email"/>
+        <input type="text" name="email" placeholder="email" required/>
 
-        <input type="password" name="password" placeholder="password"/>
+        <input type="password" name="password" placeholder="password" required/>
 
         <input type="submit" name="sub" value="Login">
     </form>

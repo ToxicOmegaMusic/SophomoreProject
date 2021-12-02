@@ -7,7 +7,6 @@
         align-items: center;
         margin-top: 0vh;
         x-overflow: hidden;
-
         background-color: #70AF70;
     }
 
@@ -56,20 +55,9 @@
         color: white;
     }
 
-    #login-form input[type=submit] {
-        height: 12vh;
-    }
-
     input {
         display: flex;
         height: 15%;
-        width: 70%;
-    }
-
-    select#userType {
-        display: flex;
-        margin-bottom: 3vh;
-        font-size: 1.4em;
         width: 70%;
     }
 
@@ -81,6 +69,10 @@
         display: flex;
         width: 55vw;
         height: 7vh;
+    }
+
+    #login-form input[type=submit] {
+        height: 12vh;
     }
 
     .input-field-box {
@@ -109,11 +101,66 @@
         color: white;
     }
 
+    select#userType {
+        display: flex;
+        margin-bottom: 3vh;
+        font-size: 1.4em;
+        width: 70%;
+    }
+
     #isPatientSelected {
         display: flex;
         flex-direction: column;
         width: 40vw;
         align-items: center;
+    }
+
+    td {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 69vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .divided { /* To give the impression of nice borders along the bottoms of input divs */
+        border-bottom: 2px solid #006600;
+    }
+
+    td input[type=checkbox] {
+        display: flex;
+        height: 6vh;
+        width: 10vw;
+    }
+
+    td p {
+        display: flex;
+        width: 35vw;
+
+        font-size: 1.4em;
+    }
+
+    .patient-home-input {
+        display: flex;
+        width: 69vw;
+        height: 7vh;
+    }
+
+    .no-skinny-divving {
+        margin-top: 2vh;
+        padding-bottom: 2vh;
+    }
+
+    input[type=submit].no-skinny-divving {
+        margin-top: 2vh;
+        padding-bottom: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    form .patient-home-input {
+        margin-bottom: 3vh;
     }
 
 }
@@ -135,7 +182,6 @@ Just do inline styling for that.
         background-size: 100vw;
         background-repeat: repeat;
         background-position: top 1vh;
-
 
         display: flex;
         flex-direction: column;
@@ -160,13 +206,7 @@ Just do inline styling for that.
         height: 25vh;
         margin-bottom: 4vh;
 
-        /*background-color: #006600;
-        color: white;
-
-        font-size: 3em;
-        font-family: Georgia, serif;*/
-        opacity: 0;
-
+        opacity: 0; /* Because I'm lazy. */
     }
 
     .home-banner:hover {
@@ -223,7 +263,7 @@ Just do inline styling for that.
     }
 
 
-/* From login-reg.css file */
+    /* From login-reg.css file */
 
     .form-text p {
         margin: 1vh;
