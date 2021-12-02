@@ -25,9 +25,9 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/doctor-home', function() {
-    return view('doctor-home');
-});
+// Route::get('/doctor-home', function() {
+//     return view('doctor-home');
+// });
 
 Route::get('/tail', function() {
     return view('tailwind');
@@ -37,5 +37,17 @@ Route::get('/tail', function() {
 Route::middleware(['App\Http\Middleware\CaregiverMiddleware'])->group(function () {
     Route::get('/caregiver-home', function() {
         return view('caregiver-home');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\DoctorMiddleware'])->group(function () {
+    Route::get('/doctor-home', function() {
+        return view('doctor-home');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\PatientMiddleware'])->group(function () {
+    Route::get('/patient-home', function() {
+        return view('patient-home');
     });
 });
