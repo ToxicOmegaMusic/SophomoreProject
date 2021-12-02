@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles.css') }}"/>
     <title>Doctor Homepage</title>
     <link rel="icon" href="/favicon.ico">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -12,8 +12,10 @@
     <div class="home-banner" onclick="location.href='/';">Eranthis<br/>Communities</div>
     
     <div class="fixedHeight">
-        <form>
-            <label for="filterBy">Filter by:</label>
+
+        <form id="doctor-home-form">
+
+            <label for="filterBy" style="font-size: 1.4em;">Filter by:</label>
             
             <select name="filterBy" id="filterBy">      
                 <option value="patientName">Patient Name</option>
@@ -38,7 +40,7 @@
         
         </form>
 
-        <table>
+        <table id="doctor-home-table">
             <tr class="headings">
                 <th>Patient Name</th>
                 <th>Date</th>

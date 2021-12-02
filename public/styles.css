@@ -163,6 +163,71 @@
         margin-bottom: 3vh;
     }
 
+    #doctor-home-form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3vh;
+        align-items: center;
+        height: 55vh;
+    }
+
+    #doctor-home-form input {
+        margin-bottom: 2vh;
+    }
+
+    select#filterBy {
+        width: 60vw;
+        height: 10vh;
+        display: flex;
+        margin-bottom: 3vh;
+    }
+
+    table#doctor-home-table {
+        border-collapse: collapse;
+        background-color: #E2F9E2;
+    }
+
+    table#doctor-home-table, th, td {
+        border: 2px solid #006600;
+    }
+
+    #doctor-home-table tbody {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        height: auto;
+    }
+
+    #doctor-home-table tr {
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    #doctor-home-table tr.headings {
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    #doctor-home-table td {
+        height: 4vh;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        display: flex;
+        width: 21vw;
+    }
+
+    #doctor-home-table th {
+        display: flex;
+        height: 4vh;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        text-align: left;
+    }
+
+
+
 }
 
 /*
@@ -302,7 +367,5 @@ Just do inline styling for that.
         margin-top: 1vh;
         margin-bottom: 2vh;
     }
-
-  
 
 }
