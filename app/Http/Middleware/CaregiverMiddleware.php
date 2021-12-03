@@ -19,7 +19,9 @@ class CaregiverMiddleware
         session_start();
         $loggedin = isset($_SESSION['logged_in']);
         if (isset($_SESSION['type'])) {
-            $type = $_SESSION['job'];
+            if (isset($_SESSION['job'])) {
+                $type = $_SESSION['job'];
+            }
         } else {
             $type = 'none';
         }
