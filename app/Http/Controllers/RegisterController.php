@@ -9,8 +9,6 @@ use Carbon\Carbon;
 use App\Models\patient;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
-
 class RegisterController extends Controller
 {
     /**
@@ -32,7 +30,9 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate((['userType' => 'required', 'email' => 'required']));
-        if (!DB::table('patients')->where('email', $request->email)->exists() && !DB::table('employees')->where('email', $request->email)->exists()  && !DB::table('families')->where('email', $request->email)->exists())
+        if (!employee::whereEmail($request->email)->exists() && 
+            !patient::whereEmail($request->email)->exists()  && 
+            !family::whereEmail($request->email)->exists())
         {
             switch ($request->userType) 
             {
@@ -104,7 +104,7 @@ class RegisterController extends Controller
                     $caregiver = new caregiver();
                     $caregiver->employee_id = $employee->id;
                     $caregiver->save();
-                    return view('caregiver-home');
+                    return view('login');
                     break;
 
                 case "Admin":
