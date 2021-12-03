@@ -50,3 +50,4 @@ Route::middleware(['App\Http\Middleware\PatientMiddleware'])->group(function () 
     Route::get('/patient-home', function() {
         return view('patient-home');
     });
+});
