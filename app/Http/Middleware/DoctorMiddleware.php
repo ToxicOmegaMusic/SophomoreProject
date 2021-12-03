@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CaregiverMiddleware
+class DoctorMiddleware
 {
     /**
      * Handle an incoming request.
@@ -25,10 +25,10 @@ class CaregiverMiddleware
         }
 
         if(!$loggedin) {
-            if ($type == 'caregiver') {
+            if ($type == 'doctor') {
                 return $next($request);
             } else {
-                return response('Please log in as a Caregiver to access this page!');
+                return response('Please log in as a Doctor to access this page!');
             }
         } else if ($loggedin){
             return response('Please login before accessing this page.');
