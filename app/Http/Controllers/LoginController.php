@@ -43,20 +43,20 @@ class LoginController extends Controller
                     case 'E':
                         switch ($user->role_name) {
                             case 'Caregiver':
-                                return redirect('caregiver-home');
                                 $_SESSION['job'] = 'caregiver';
+                                return redirect('caregiver-home');
                                 break;
                             case 'Admin':
-                                return redirect('admin-home');
                                 $_SESSION['job'] = 'admin';
+                                return redirect('admin-home');
                                 break;
                             case 'Doctor':
-                                return redirect('doctor-home');
                                 $_SESSION['job'] = 'doctor';
+                                return redirect('doctor-home');
                                 break;
                             case 'Supervisor':
-                                return redirect('supervisor-home');
                                 $_SESSION['job'] = 'supervisor';
+                                return redirect('supervisor-home');
                                 break;
                         }
                         break;
