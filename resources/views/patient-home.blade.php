@@ -13,7 +13,7 @@
         <div class="border1">
             
             <label for="patient-id">Patient ID</label>
-            <input type="text" name="patient-id" id="patientID" disabled>
+            <input type="text" value="" name="patient-id" id="patientID" disabled>
             
             <label for="patient-name">Patient Name</label>
             <input type="text" name="patient-name" id="patient-name" disabled>
@@ -26,67 +26,34 @@
     </form>
     
     <table>
-        @foreach($data as $thing)
-        <tr>
-            <th>{{ $data->employee_id }}</th>
-        </tr>
-
-        <tr>
-            <td>
-                <span name="caregiver-name">Lindsey Jacobs</span>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Did you have the appointment?</p>
-                <input type="checkbox" id="had-appt" disabled>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Took morning medicine</p>
-                <input type="checkbox" id="took-morning-meds" disabled>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Took afternoon medicine</p>
-                <input type="checkbox" id="took-afternoon-meds" disabled>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Took evening medicine</p>
-                <input type="checkbox" id="took-evening-meds" disabled>
-                </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Had breakfast</p>
-                <input type="checkbox" id="had-breakfast" disabled>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Had lunch</p>
-                <input type="checkbox" id="had-lunch" disabled>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Had dinner</p>
-                <input type="checkbox" id="had-dinner" disabled>
-            </td>
-        </tr>
-        @endforeach
-
+        <thead>
+            <tr>
+                <th><strong>Doctor Name</strong></th>
+                <th><strong>Doctor's Appointment</strong></th>
+                <th><strong>Caregiver Name</strong></th>
+                <th><strong>Morning Medicine</strong></th>
+                <th><strong>Afternoon Medicine</strong></th>
+                <th><strong>Night Medicine</strong></th>
+                <th><strong>Breakfast</strong></th>
+                <th><strong>Lunch</strong></th>
+                <th><strong>Dinner</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($data as $d)
+            <tr>
+                <th>{{ $d->id }}</th>
+                <th>{{  }}</th>
+                <th>{{  }}</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            @endforeach
+        </tbody>
     </table>
 
 </body>
