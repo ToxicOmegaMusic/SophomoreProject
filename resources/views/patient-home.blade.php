@@ -26,10 +26,9 @@
     </form>
     
     <table>
+        @foreach($data as $thing)
         <tr>
-            <td>
-                <span name="doctor-name">Dr. Mario</span>
-            </td>
+            <th>{{ $data->employee_id }}</th>
         </tr>
 
         <tr>
@@ -86,6 +85,7 @@
                 <input type="checkbox" id="had-dinner" disabled>
             </td>
         </tr>
+        @endforeach
 
     </table>
 

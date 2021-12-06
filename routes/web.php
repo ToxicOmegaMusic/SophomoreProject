@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-
-
 Route::get('/tail', function() {
     return view('tailwind');
 });
@@ -45,7 +44,8 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:4'])->group(function () {
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
     Route::get('/patient-home', function() {
-        return view('patient-home');
+        $data = DB::table('doctor_appointments')->get()->toArray();
+        return view('patient-home')->with('data', $data);
     });
 });
 
@@ -71,4 +71,12 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
     Route::get('/patients', function() {
         return view('patients');
     });
+});
+
+Route::get('/new-role', function () {
+    return view('new-role');
+});
+
+Route::get('/approve-user', function () {
+    return view('approve-user');
 });
