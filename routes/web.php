@@ -70,3 +70,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:supervisor'])->group(func
 Route::get('/new-role', function () {
     return view('new-role');
 });
+
+Route::get('/approve-user', function () {
+    return view('approve-user');
+});
