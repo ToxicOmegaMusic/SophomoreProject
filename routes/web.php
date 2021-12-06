@@ -67,3 +67,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:supervisor'])->group(func
         return view('supervisor-home');
     });
 });
+
+Route::get('/new-role', function () {
+    return view('new-role');
+});
