@@ -19,19 +19,12 @@ class LoginController extends Controller
     {
         if (isset($_GET['sub']) == 'Login')
         {
-            $flag = 'E';
             if (employee::whereEmail($request->email)->exists())
                 $user = employee::whereEmail($request->email)->first();
             else if (patient::whereEmail($request->email)->exists())
-            {
-                $flag = 'P';
                 $user = patient::whereEmail($request->email)->first();
-            }
             else if (family_member::whereEmail($request->email)->exists())
-            {
-                $flag = 'F';
                 $user = family_member::whereEmail($request->email)->first();
-            }
             else return 'Email not found...';
             if ($request->password == $user->password)
             {
@@ -43,35 +36,7 @@ class LoginController extends Controller
                 $_SESSION['access_level'] = roles::where('id', $user->role_id)->pluck('access_level')->first();
                 // $_SESSION['type'] = $flag;
                 // dd($_SESSION);
-                switch ($flag)
-                {
-                    case 'E':
-                        switch ($user->role_name) {
-                            case 'Caregiver':
-                                $_SESSION['job'] = 'caregiver';
-                                return redirect('caregiver-home');
-                                break;
-                            case 'Admin':
-                                $_SESSION['job'] = 'admin';
-                                return redirect('admin-home');
-                                break;
-                            case 'Doctor':
-                                $_SESSION['job'] = 'doctor';
-                                return redirect('doctor-home');
-                                break;
-                            case 'Supervisor':
-                                $_SESSION['job'] = 'supervisor';
-                                return redirect('supervisor-home');
-                                break;
-                        }
-                        break;
-                    case 'P':
-                        return redirect('patient-home');
-                        break;
-                    case 'F':
-                        return redirect('family-home');
-                        break;
-                }
+                return redirect(roles::where('id', $user->role_id)->pluck('title')->first() . '-home');
             }
             else return 'Incorrect password!';
         }
