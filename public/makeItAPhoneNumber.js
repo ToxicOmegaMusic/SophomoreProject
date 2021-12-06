@@ -52,6 +52,12 @@ function formatPhoneText(value){
     value = value.slice(0,3) + "-" + value.slice(3);
   else if(value.length > 6) 
     value = value.slice(0,3) + "-" + value.slice(3,6) + "-" + value.slice(6);
+
+
+  if (value.length > 12)
+  {
+    value = value.substring(0,12);
+  }
   
   return value;
 }
