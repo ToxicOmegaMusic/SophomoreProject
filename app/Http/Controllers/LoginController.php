@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\employee;
-use App\Models\family;
+use App\Models\family_member;
 use App\Models\patient;
+use App\Models\roles;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -26,18 +27,22 @@ class LoginController extends Controller
                 $flag = 'P';
                 $user = patient::whereEmail($request->email)->first();
             }
-            else if (family::whereEmail($request->email)->exists())
+            else if (family_member::whereEmail($request->email)->exists())
             {
                 $flag = 'F';
-                $user = family::whereEmail($request->email)->first();
+                $user = family_member::whereEmail($request->email)->first();
             }
             else return 'Email not found...';
             if ($request->password == $user->password)
             {
                 session_start();
                 $_SESSION['logged_in'] = true;
-                $_SESSION['type'] = $flag;
                 $_SESSION['id'] = $user->id;
+                $_SESSION['role_name'] = roles::where('id', $user->role_id)->pluck('title')->first();
+                $_SESSION['role_id'] = roles::where('id', $user->role_id)->pluck('id')->first();
+                $_SESSION['access_level'] = roles::where('id', $user->role_id)->pluck('access_level')->first();
+                // $_SESSION['type'] = $flag;
+                // dd($_SESSION);
                 switch ($flag)
                 {
                     case 'E':
@@ -64,7 +69,7 @@ class LoginController extends Controller
                         return redirect('patient-home');
                         break;
                     case 'F':
-                        return redirect('welcome');
+                        return redirect('family-home');
                         break;
                 }
             }

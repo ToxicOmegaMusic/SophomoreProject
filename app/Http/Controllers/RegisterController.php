@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\caregiver;
 use App\Models\employee;
-use App\Models\family;
+use App\Models\family_member;
 use Carbon\Carbon;
 use App\Models\patient;
 use Illuminate\Http\Request;
@@ -32,7 +32,7 @@ class RegisterController extends Controller
         $request->validate((['userType' => 'required', 'email' => 'required']));
         if (!employee::whereEmail($request->email)->exists() && 
             !patient::whereEmail($request->email)->exists()  && 
-            !family::whereEmail($request->email)->exists())
+            !family_member::whereEmail($request->email)->exists())
         {
             switch ($request->userType) 
             {
@@ -78,7 +78,7 @@ class RegisterController extends Controller
                     $doctor = new employee();
                     $doctor->f_name = $request->fName;
                     $doctor->l_name = $request->lName;
-                    $doctor->role_name = 'Doctor';
+                    $doctor->role_id = 3;
                     $doctor->email = $request->email;
                     $doctor->password = $request->password;
                     $doctor->save();
@@ -98,13 +98,12 @@ class RegisterController extends Controller
                     $employee->l_name = $request->lName;
                     $employee->email = $request->email;
                     $employee->password = $request->password;
-                    $employee->role_name = 'Caregiver';
+                    $employee->role_id = 4;
                     $employee->save();
     
                     $caregiver = new caregiver();
                     $caregiver->employee_id = $employee->id;
                     $caregiver->save();
-                    return view('login');
                     break;
 
                 case "Admin":
@@ -121,7 +120,7 @@ class RegisterController extends Controller
                     $admin->l_name = $request->lName;
                     $admin->email = $request->email;
                     $admin->password = $request->password;
-                    $admin->role_name = 'Admin';
+                    $admin->role_id = 1;
                     $admin->save();
                     break;
 
@@ -139,7 +138,7 @@ class RegisterController extends Controller
                     $supervisor->l_name = $request->lName;
                     $supervisor->email = $request->email;
                     $supervisor->password = $request->password;
-                    $supervisor->role_name = 'Supervisor';
+                    $supervisor->role_id = 2;
                     $supervisor->save();
                     break;
 
@@ -153,7 +152,7 @@ class RegisterController extends Controller
                         'DOB' => 'required'
                     ]);
     
-                    $family = new family();
+                    $family = new family_member();
                     $family->family_password = $request->FamilyPassword;
                     $family->f_name = $request->fName;
                     $family->l_name = $request->lName;
@@ -165,7 +164,7 @@ class RegisterController extends Controller
                     break;
             }
 
-            return back();
+            return view('login');
         }
 
         else return "Email already exists!";
