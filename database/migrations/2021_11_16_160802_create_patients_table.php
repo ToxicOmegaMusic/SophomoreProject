@@ -15,7 +15,7 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            $table->id()->onDelete('cascade');
             $table->string('f_name');
             $table->string('l_name');
             $table->string('email');
@@ -29,7 +29,7 @@ class CreatePatientsTable extends Migration
             $table->string('ec_phone');
             $table->string('group')->nullable();
             $table->date('admission_date')->nullable();
-            $table->string('role_name')->default('Patient');
+            $table->integer('role_id')->default(5);
             $table->decimal('balance_due', 10, 2)->default(0);
             $table->boolean('approved')->default(0);
             $table->timestamps();
