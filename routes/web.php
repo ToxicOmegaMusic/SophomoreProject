@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-
-
 Route::get('/tail', function() {
     return view('tailwind');
 });
@@ -44,8 +43,10 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:caregiver'])->group(funct
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:patient'])->group(function () {
+    // this is for patient home, its above the middleware for testing.
     Route::get('/patient-home', function() {
-        return view('patient-home');
+        $data = DB::table('doctor_appointments')->get()->toArray();
+        return view('patient-home')->with('data', $data);
     });
 });
 
