@@ -36,6 +36,13 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     });
 });
 
+// Note the new kind of route that may or may not work
+Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
+    Route::get('/doctor-home/patient', function() {
+        return view('doctor-patient');
+    });
+});
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:4'])->group(function () {
     Route::get('/caregiver-home', function() {
         return view('caregiver-home');
@@ -61,6 +68,12 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     });
 });
 
+Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
+    Route::get('/admin-report', function() {
+        return view('admin-report');
+    });
+});
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:2'])->group(function () {
     Route::get('/supervisor-home', function() {
         return view('supervisor-home');
@@ -73,10 +86,52 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
     });
 });
 
-Route::get('/new-role', function () {
-    return view('new-role');
+Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
+    Route::get('/new-role', function () {
+        return view('new-role');
+    });
 });
 
-Route::get('/approve-user', function () {
-    return view('approve-user');
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/approve-user', function () {
+        return view('approve-user');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/patient-info', function () {
+        return view('patient-info');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/doctor-appointment', function () {
+        return view('doctor-appointment');
+    });
+});
+
+// Only admin can change salary
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/employee-info', function () {
+        return view('employee-info');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/roster', function () {
+        return view('roster');
+    });
+});
+
+// Not sure exactly what this page is supposed to do but it's in the notes
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/new-roster', function () {
+        return view('new-roster');
+    });
+});
+
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/payment', function () {
+        return view('payment');
+    });
 });
