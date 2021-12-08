@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -24,7 +25,8 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::insert('insert into roles (title, access_level) values (?, ?)', [$request->roleName, $request->accessLevel]);
+        return back();
     }
 
     /**
@@ -35,7 +37,8 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        //
+        $roles = DB::table('roles')->get()->toArray();
+        return view('new-role', compact('roles'));
     }
 
     /**
