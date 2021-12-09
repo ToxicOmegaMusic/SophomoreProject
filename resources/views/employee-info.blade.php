@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
 </head>
 <body>
+    <div class="error"></div>
     <table>
         <tr>
             <th>ID</th>

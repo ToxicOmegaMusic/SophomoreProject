@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <div class="error"></div>
     <form>
         <label for="date">Date</label>
         <input type="date" name="date" id="date">
