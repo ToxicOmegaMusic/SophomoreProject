@@ -78,12 +78,6 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     });
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
-    Route::get('/admin-report', function() {
-        return view('admin-report');
-    });
-});
-
 Route::middleware(['App\Http\Middleware\UserMiddleware:2'])->group(function () {
     Route::get('/supervisor-home', function() {
         return view('supervisor-home');
