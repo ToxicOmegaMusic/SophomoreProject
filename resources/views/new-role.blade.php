@@ -6,6 +6,8 @@
 </head>
 
 <body>
+    <form action="api/new-role" method="POST">
+        
     <div class="error"></div>
     <form>
         <label for="roleName">New Role Name</label>
@@ -16,3 +18,35 @@
         <input type="submit" name="OK" id="OK" value="OK">
         <input type="button" name="cancel" id="cancel" value="cancel" onclick="location.href='/';">
     </form>
+
+    <table>
+        <tr>
+            <th>Role Name</th>
+            <th>Access Level</th>
+        </tr>
+        @foreach ($roles as $r )
+            <tr>
+                <td>{{ $r->title }}</td>
+                <td>{{ $r->access_level }}</td>
+            </tr>
+        @endforeach
+
+        
+    </table>
+
+</body>
+
+<style>
+    tr {
+        padding: 0.5vh;
+        border-bottom: 1px solid #006600;
+        display: flex;
+        max-width: 1050px;
+    }
+    th, td {
+        width: 115px
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
