@@ -153,7 +153,7 @@ class RegisterController extends Controller
                     $family->save();
                     break;
             }
-            return view('login');
+            return redirect('login');
         }
         else return "Email already exists!";
     }
