@@ -18,6 +18,7 @@
     </head>
 
     <body>
+        <div class="error"></div>
         <img src="{{ asset('img/ec-home-banner-final.png') }}" class="resize" style="margin-bottom: 5vh;"/>
 
         <div class="menu">

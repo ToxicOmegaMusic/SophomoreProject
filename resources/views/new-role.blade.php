@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <div class="error"></div>
     <form>
         <label for="roleName">New Role Name</label>
         <input type="text" name="roleName" id="roleName">

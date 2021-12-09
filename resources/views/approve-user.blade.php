@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <div class="error"></div>
     <table>
         <tr>
             <th>Name</th>
