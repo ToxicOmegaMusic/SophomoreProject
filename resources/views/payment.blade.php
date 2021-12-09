@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Make a payment</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
 <body>

@@ -1,8 +1,10 @@
+<!-- https://tailwindui.com/components/application-ui/forms/sign-in-forms -->
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 <body>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
     <title>Doctor Homepage</title>
     <link rel="icon" href="/favicon.ico">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
