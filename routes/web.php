@@ -98,13 +98,26 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     Route::get('/new-role', function () {
-        return view('new-role');
+        $data = DB::table('roles')
+            ->get()->toArray();
+        return view('new-role', compact('data'));
     });
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/approve-user', function () {
-        return view('approve-user');
+        $patient = DB::table('patients')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $employee = DB::table('employees')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $family = DB::table('family_members')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $roles = DB::table('roles')
+            ->get()->toArray();
+        return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
     });
 });
 
