@@ -19,7 +19,7 @@
 
     <body class="flex flex-col items-center bg-gradient-to-t from-green-400 to-green-900">
 
-        <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-56 items-center w-full">
+        <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-56 items-center w-full cursor-default">
             Eranthis<br/>Communities
         </div>
 
