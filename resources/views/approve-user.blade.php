@@ -7,7 +7,8 @@
 
 <body>
     <div class="error"></div>
-    <form action="http://172.31.109.60:6969/api/approval" method="POST">
+        <form action="/api/approval" method="POST">
+        {{-- <form action="http://172.31.109.60:6969/api/approval" method="POST"> --}}
         <table>
                 <tr>
                     <th>Approve</th>
@@ -42,7 +43,7 @@
                     <td><input type="checkbox" name="employee_approve_{{ $key }}"></td>
                     <input type="hidden" name="employee_id_{{ $key }}" value="{{ $d->id }}">
                     <td>{{ $d->f_name . " " . $d->l_name }}</td>
-                    <td>{{ ucwords($roles[$d->role_id]->title) }}</td>
+                    <td>{{ ucwords($roles[$d->role_id-1]->title) }}</td>
                 </tr>
                 @endforeach
 

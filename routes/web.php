@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -99,20 +100,23 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    Route::get('/approve-user', function () {
-        $patient = DB::table('patients')
-            ->where('approved', '=', '0')
-            ->get()->toArray();
-        $employee = DB::table('employees')
-            ->where('approved', '=', '0')
-            ->get()->toArray();
-        $family = DB::table('family_members')
-            ->where('approved', '=', '0')
-            ->get()->toArray();
-        $roles = DB::table('roles')
-            ->get()->toArray();
-        return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
-    });
+    Route::get('/approve-user', [ApprovalController::class, 'index']);
+    // Route::get('/approve-user', function() {
+    //     $patient = DB::table('patients')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $employee = DB::table('employees')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $family = DB::table('family_members')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $roles = DB::table('roles')
+    //         ->get()->toArray();
+    //     return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
+    // });
+    
+    // Route::post('/approve-user', [ApprovalController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {

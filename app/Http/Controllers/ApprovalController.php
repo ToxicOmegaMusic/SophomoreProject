@@ -6,6 +6,7 @@ use App\Models\employee;
 use App\Models\family_member;
 use App\Models\patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApprovalController extends Controller
 {
@@ -16,7 +17,18 @@ class ApprovalController extends Controller
      */
     public function index()
     {
-        //
+        $patient = DB::table('patients')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $employee = DB::table('employees')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $family = DB::table('family_members')
+            ->where('approved', '=', '0')
+            ->get()->toArray();
+        $roles = DB::table('roles')
+            ->get()->toArray();
+        return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
     }
 
     /**
@@ -29,62 +41,25 @@ class ApprovalController extends Controller
     {
         for ($i = 0; $i < $request->patient_total; $i++) {
             if ($request['patient_approve_' . $i]) {
-                
-                $user = patient::find($i+1);
+                $user = patient::find($request['patient_id_' . $i]);
                 $user->approved = 1;
                 $user->save();
             }
         }
         for ($i = 0; $i < $request->family_total; $i++) {
             if ($request['family_approve_' . $i]) {
-                
-                $user = family_member::find($i+1);
+                $user = family_member::find($request['family_id_' . $i]);
                 $user->approved = 1;
                 $user->save();
             }
         }
         for ($i = 0; $i < $request->employee_total; $i++) {
             if ($request['employee_approve_' . $i]) {
-                
-                $user = employee::find($i+1);
+                $user = employee::find($request['employee_id_' . $i]);
                 $user->approved = 1;
                 $user->save();
             }
         }
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
