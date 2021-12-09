@@ -12,20 +12,18 @@
             <th>Name</th>
             <th>Role</th>
         </tr>
-
+        
+        <form>
+        
         <tr>
+            <label for="approve">Approve</label>
+            <input type="checkbox" name="approve" id="yes">
             <td>Wario</td>
             <td>Admin</td>
         </tr>
+
+        <input type="submit" name="submit" id="submit" value="Approve selected users">
+        </form>
+    
     </table>
-
-    <form>
-        <label for="yes">Yes</label>
-        <input type="radio" name="approve" id="yes">
-
-        <label for="yes">No</label>
-        <input type="radio" name="approve" id="no">
-
-        <input type="submit" name="submit" id="submit" value="next">
-    </form>
 </body>
