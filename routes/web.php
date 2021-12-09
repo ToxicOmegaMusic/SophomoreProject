@@ -92,10 +92,10 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     });
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/approve-user', function () {
         return view('approve-user');
     });
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
