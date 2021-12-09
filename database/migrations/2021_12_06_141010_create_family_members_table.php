@@ -16,8 +16,8 @@ class CreateFamilyMembersTable extends Migration
         Schema::create('family_members', function (Blueprint $table) {
             $table->id()->onDelete('cascade');
             $table->string('family_password')->nullable();
-            $table->string('F_f_name');
-            $table->string('F_l_name');
+            $table->string('f_name');
+            $table->string('l_name');
             $table->string('email');
             $table->string('phone');
             $table->string('password');

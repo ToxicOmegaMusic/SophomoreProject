@@ -98,8 +98,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     Route::get('/new-role', function () {
-        $roles = DB::table('roles')->get()->toArray();
-        return view('new-role', compact('roles'));
+        return view('new-role');
     });
 });
 
@@ -121,10 +120,12 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     });
 });
 
-// Only admin can change salary
+// // Only admin can change salary
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/employee-info', function () {
-        return view('employee-info');
+        $data = DB::table('employees')
+            ->get()->toArray();
+        return view('employee-info', compact('data'));
     });
 });
 

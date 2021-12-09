@@ -40,9 +40,9 @@
 
         @foreach($data as $d)
         <tr class="body">
-            <td>{{ $doctor['0']->E_f_name.' '.$doctor['0']->E_l_name }}</td>
+            <td>{{ $doctor['0']->f_name.' '.$doctor['0']->l_name }}</td>
             <td>{{ $d->appointment_id }}</td>
-            <td>{{ $caregiver[0]->E_f_name.' '.$caregiver[0]->E_l_name }}</td>
+            <td>{{ $caregiver[0]->f_name.' '.$caregiver[0]->l_name }}</td>
             <td>{{ $d->morning_prescription }}</td>
             <td>{{ $d->afternoon_prescription }}</td>
             <td>{{ $d->night_prescription }}</td>
