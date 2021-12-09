@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <div class="error"></div>
     <div class="home-redirect" onclick="location.href='/';"></div>
     
     <div class="fixedHeight">

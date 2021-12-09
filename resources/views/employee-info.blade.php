@@ -18,6 +18,7 @@
         
     </form>
     
+    <div class="error"></div>
     <table>
         <tr>
             <th>ID</th>

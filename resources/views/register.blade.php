@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <div class="error"></div>
     <div class="home-redirect" onclick="location.href='/';"></div> <!-- This makes me a certified HACKER -->
 
     <form action="http://172.31.109.60:6969/api/register" method="POST"> <!-- Add action later! -->

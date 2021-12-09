@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+    <div class="error"></div>
     <div class="home-redirect"></div>
 
     <form>

@@ -8,6 +8,8 @@
 <body>
     <form action="api/new-role" method="POST">
         
+    <div class="error"></div>
+    <form>
         <label for="roleName">New Role Name</label>
         <input type="text" name="roleName" id="roleName">
         <label for="roleName">Access Level</label>
