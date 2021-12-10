@@ -21,4 +21,4 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('new-role', RoleController::class);
 Route::resource('register', RegisterController::class);
 Route::resource('login', LoginController::class);
-Route::resource('employee-info', EmployeeInfoController::class);
+Route::apiResource('employee-info', EmployeeInfoController::class);

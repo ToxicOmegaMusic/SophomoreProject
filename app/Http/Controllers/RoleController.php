@@ -14,7 +14,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = DB::table('roles')->get()->toArray();
+        return view('new-role', compact('roles'));
     }
 
     /**
@@ -37,8 +38,6 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        $roles = DB::table('roles')->get()->toArray();
-        return view('new-role', compact('roles'));
     }
 
     /**

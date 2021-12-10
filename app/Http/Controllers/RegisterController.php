@@ -66,8 +66,8 @@ class RegisterController extends Controller
                     ]);
     
                     $doctor = new employee();
-                    $doctor->E_f_name = $request->fName;
-                    $doctor->E_l_name = $request->lName;
+                    $doctor->f_name = $request->fName;
+                    $doctor->l_name = $request->lName;
                     $doctor->role_id = 3;
                     $doctor->email = $request->email;
                     $doctor->password = $request->password;
@@ -84,8 +84,8 @@ class RegisterController extends Controller
                     ]);
     
                     $employee = new employee();
-                    $employee->E_f_name = $request->fName;
-                    $employee->E_l_name = $request->lName;
+                    $employee->f_name = $request->fName;
+                    $employee->l_name = $request->lName;
                     $employee->email = $request->email;
                     $employee->password = $request->password;
                     $employee->role_id = 4;
@@ -106,8 +106,8 @@ class RegisterController extends Controller
                     ]);
     
                     $admin = new employee();
-                    $admin->E_f_name = $request->fName;
-                    $admin->E_l_name = $request->lName;
+                    $admin->f_name = $request->fName;
+                    $admin->l_name = $request->lName;
                     $admin->email = $request->email;
                     $admin->password = $request->password;
                     $admin->role_id = 1;
@@ -124,8 +124,8 @@ class RegisterController extends Controller
                     ]);
     
                     $supervisor = new employee();
-                    $supervisor->E_f_name = $request->fName;
-                    $supervisor->E_l_name = $request->lName;
+                    $supervisor->f_name = $request->fName;
+                    $supervisor->l_name = $request->lName;
                     $supervisor->email = $request->email;
                     $supervisor->password = $request->password;
                     $supervisor->role_id = 2;
@@ -144,8 +144,8 @@ class RegisterController extends Controller
     
                     $family = new family_member();
                     $family->family_password = $request->FamilyPassword;
-                    $family->F_f_name = $request->fName;
-                    $family->F_l_name = $request->lName;
+                    $family->f_name = $request->fName;
+                    $family->l_name = $request->lName;
                     $family->email = $request->email;
                     $family->phone = $request->phone;
                     $family->password = $request->password;

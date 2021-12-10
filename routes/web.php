@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EmployeeInfoController;
+use App\Http\Controllers\PatientHomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -50,20 +52,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:4'])->group(function () {
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
-    Route::get('/patient-home', function() {
-        // $data = DB::table('doctor_appointments')->get()->toArray();
-        $data = DB::table('doctor_appointments')
-            ->join('patients', 'patients.id', '=', 'doctor_appointments.patient_id')
-            ->get()->toArray();
-        $doctor = DB::table('employees')
-            ->where('id', '=', $data['0']->employee_id)
-            ->get()->toArray();
-        $caregiver = DB::table('employees')
-            ->where("role_id", '=', "4")
-            ->get()->toArray();
-        // dd($data, $doctor, $caregiver);
-        return view('patient-home', compact('data', 'doctor', 'caregiver'));
-    });
+    Route::get('/patient-home', [PatientHomeController::class, 'index']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:6'])->group(function () {
@@ -122,11 +111,14 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
 
 // // Only admin can change salary
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    Route::get('/employee-info', function () {
-        $data = DB::table('employees')
-            ->get()->toArray();
-        return view('employee-info', compact('data'));
-    });
+    // Route::get('/employee-info', function () {
+    //     $data = DB::table('employees')
+    //         ->get()->toArray();
+    //     return view('employee-info', compact('data'));
+    // });
+    Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
+    Route::put('/employee-info', [EmployeeInfoController::class, 'update']);
+    Route::post('/employee-info', [EmployeeInfoController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
