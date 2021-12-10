@@ -17,7 +17,7 @@
             <input type="password" name="password" placeholder="password"/>
 
             <input type="submit" name="sub" value="Login">
-     </form>
+        </form>
 
     <div class="aligner-element"></div>
 
