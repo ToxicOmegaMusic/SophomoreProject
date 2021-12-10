@@ -30,10 +30,12 @@ Route::get('/tail', function() {
     return view('tailwind');
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
-    Route::get('/doctor-home', function() {
+Route::get('/doctor-home', function() { /* Keep this here for now */
         return view('doctor-home');
-    });
+});
+
+Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
+    
 });
 
 // Note the new kind of route that may or may not work
