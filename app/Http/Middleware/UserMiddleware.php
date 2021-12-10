@@ -23,9 +23,9 @@ class UserMiddleware
         session_start();
         if (isset($_SESSION['type']) && $_SESSION['type'] == 'E')
             $approved = employee::where('id', $_SESSION['id'])->pluck('approved')->first();
-        else if (isset($_SESSION['type']) && $_SESSION['type'] == 'E')
+        else if (isset($_SESSION['type']) && $_SESSION['type'] == 'P')
             $approved = patient::where('id', $_SESSION['id'])->pluck('approved')->first();
-        else if (isset($_SESSION['type']) && $_SESSION['type'] == 'E')
+        else if (isset($_SESSION['type']) && $_SESSION['type'] == 'F')
             $approved = family_member::where('id', $_SESSION['id'])->pluck('approved')->first();
         else return response('Please login before accessing this page.');
 
@@ -36,8 +36,8 @@ class UserMiddleware
             foreach ($access_level as $level) {
                 if (isset($_SESSION['access_level']) && $_SESSION['access_level'] == $level)
                     return $next($request);
-                else return response('Please log in as a ' . $lowest_req . ' to access this page!');
             }
+            return response('Please log in as a ' . $lowest_req . ' to access this page!');
         }
         else return response('Please await admin approval before proceeding.');
         
