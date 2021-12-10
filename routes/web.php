@@ -39,7 +39,6 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     });
 });
 
-// Note the new kind of route that may or may not work
 Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     Route::get('/doctor-home/patient', function() {
         return view('doctor-patient');
@@ -90,22 +89,6 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/approve-user', [ApprovalController::class, 'index']);
-    // Route::get('/approve-user', function() {
-    //     $patient = DB::table('patients')
-    //         ->where('approved', '=', '0')
-    //         ->get()->toArray();
-    //     $employee = DB::table('employees')
-    //         ->where('approved', '=', '0')
-    //         ->get()->toArray();
-    //     $family = DB::table('family_members')
-    //         ->where('approved', '=', '0')
-    //         ->get()->toArray();
-    //     $roles = DB::table('roles')
-    //         ->get()->toArray();
-    //     return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
-    // });
-    
-    // Route::post('/approve-user', [ApprovalController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
@@ -138,7 +121,6 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     });
 });
 
-// Not sure exactly what this page is supposed to do but it's in the notes
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/new-roster', function () {
         return view('new-roster');
