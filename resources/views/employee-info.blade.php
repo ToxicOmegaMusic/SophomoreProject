@@ -14,7 +14,6 @@
         <input type="number" id="newSalary" name="newSalary">
         
         <input type="submit" name="submit" id="submit" value="next">
-        <input type="hidden" name="_method" value="put" />
         
     </form>
     

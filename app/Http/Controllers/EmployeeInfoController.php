@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,18 @@ class EmployeeInfoController extends Controller
      */
     public function store(Request $request)
     {
-        return 'store ran';
+        session_start();
+
+        // dd($_SESSION);
+        if ($_SESSION['access_level'] == 1) {
+            $employee = employee::find($request['employeeID']);
+            $employee->salary = $request['newSalary'];
+            $employee->save();
+    
+            return back();
+        } else {
+            return back();
+        }
     }
 
     /**

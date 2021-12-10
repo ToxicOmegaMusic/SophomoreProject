@@ -122,13 +122,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
 
 // // Only admin can change salary
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    // Route::get('/employee-info', function () {
-    //     $data = DB::table('employees')
-    //         ->get()->toArray();
-    //     return view('employee-info', compact('data'));
-    // });
     Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
-    Route::put('/employee-info', [EmployeeInfoController::class, 'update']);
     Route::post('/employee-info', [EmployeeInfoController::class, 'store']);
 });
 

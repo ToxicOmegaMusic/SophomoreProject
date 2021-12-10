@@ -32,9 +32,9 @@ class LoginController extends Controller
                 session_start();
                 $_SESSION['logged_in'] = true;
                 $_SESSION['id'] = $user->id;
-                $_SESSION['role_name'] = roles::where('id', $user->role_id)->pluck('title')->first();
-                $_SESSION['role_id'] = roles::where('id', $user->role_id)->pluck('id')->first();
-                $_SESSION['access_level'] = roles::where('id', $user->role_id)->pluck('access_level')->first();
+                $_SESSION['role_name'] = roles::where('id', '=', $user->role_id)->pluck('title')->first();
+                $_SESSION['role_id'] = roles::where('id', '=', $user->role_id)->pluck('id')->first();
+                $_SESSION['access_level'] = roles::where('id', '=', $user->role_id)->pluck('access_level')->first();
                 return redirect(roles::where('id', $user->role_id)->pluck('title')->first() . '-home');
             }
             else return 'Incorrect password!';
