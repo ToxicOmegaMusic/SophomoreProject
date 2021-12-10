@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\RosterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -17,14 +18,17 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
+##### THIS ROUTE FINISHED/WORKING #####
 Route::get('/', function () {
     return view('welcome');
 });
 
+##### THIS ROUTE FINISHED/WORKING #####
 Route::get('/login', function () {
     return view('login');
 });
 
+##### THIS ROUTE FINISHED/WORKING #####
 Route::get('/register', function () {
     return view('register');
 });
@@ -32,6 +36,7 @@ Route::get('/register', function () {
 Route::get('/tail', function() {
     return view('tailwind');
 });
+
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     Route::get('/doctor-home', function() {
@@ -45,11 +50,13 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     });
 });
 
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:4'])->group(function () {
     Route::get('/caregiver-home', function() {
         return view('caregiver-home');
     });
 });
+
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
     Route::get('/patient-home', [PatientHomeController::class, 'index']);
@@ -79,12 +86,9 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
     });
 });
 
+##### THIS ROUTE FINISHED/WORKING #####
 Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
-    Route::get('/new-role', function () {
-        $data = DB::table('roles')
-            ->get()->toArray();
-        return view('new-role', compact('data'));
-    });
+    Route::get('/new-role', [RoleController::class, 'index']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
@@ -97,28 +101,24 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     });
 });
 
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/doctor-appointment', function () {
         return view('doctor-appointment');
     });
-Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
 });
 
-// // Only admin can change salary
+##### THIS ROUTE FINISHED/WORKING #####
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
     Route::post('/employee-info', [EmployeeInfoController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    Route::get('/roster', function () {
-        return view('roster');
-    });
+    Route::get('/roster', [RosterController::class, 'index']);
+    Route::post('/new-roster', [RosterController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    Route::get('/new-roster', function () {
-        return view('new-roster');
-    });
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
