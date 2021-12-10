@@ -97,10 +97,10 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     });
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/doctor-appointment', function () {
         return view('doctor-appointment');
     });
+Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
 });
 
 // // Only admin can change salary
