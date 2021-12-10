@@ -21,6 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->string('password');
             $table->integer('role_id');
             $table->integer('salary')->nullable();
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }

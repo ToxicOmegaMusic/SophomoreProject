@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
+use App\Http\Controllers\ApprovalController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -67,12 +68,6 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     });
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
-    Route::get('/admin-report', function() {
-        return view('admin-report');
-    });
-});
-
 Route::middleware(['App\Http\Middleware\UserMiddleware:2'])->group(function () {
     Route::get('/supervisor-home', function() {
         return view('supervisor-home');
@@ -87,14 +82,30 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(funct
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:1'])->group(function () {
     Route::get('/new-role', function () {
-        return view('new-role');
+        $data = DB::table('roles')
+            ->get()->toArray();
+        return view('new-role', compact('data'));
     });
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
-    Route::get('/approve-user', function () {
-        return view('approve-user');
-    });
+    Route::get('/approve-user', [ApprovalController::class, 'index']);
+    // Route::get('/approve-user', function() {
+    //     $patient = DB::table('patients')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $employee = DB::table('employees')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $family = DB::table('family_members')
+    //         ->where('approved', '=', '0')
+    //         ->get()->toArray();
+    //     $roles = DB::table('roles')
+    //         ->get()->toArray();
+    //     return view('approve-user', compact('patient', 'employee', 'family', 'roles'));
+    // });
+    
+    // Route::post('/approve-user', [ApprovalController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {

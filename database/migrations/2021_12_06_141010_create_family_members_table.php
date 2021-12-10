@@ -23,6 +23,7 @@ class CreateFamilyMembersTable extends Migration
             $table->string('password');
             $table->integer('role_id')->default(6);
             $table->date('dob');
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }

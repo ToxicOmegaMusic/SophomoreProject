@@ -13,7 +13,7 @@ class employee extends Model
         'l_name',
         'email',
         'password',
-        'role_name',
+        'role_id',
         'salary'
     ];
 }
