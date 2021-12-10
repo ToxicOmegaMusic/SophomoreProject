@@ -19,17 +19,24 @@ class LoginController extends Controller
     {
         if (isset($_GET['sub']) == 'Login')
         {
-            if (employee::whereEmail($request->email)->exists())
+            if (employee::whereEmail($request->email)->exists()) {
                 $user = employee::whereEmail($request->email)->first();
-            else if (patient::whereEmail($request->email)->exists())
+                $type = 'E';
+            }
+            else if (patient::whereEmail($request->email)->exists()) {
                 $user = patient::whereEmail($request->email)->first();
-            else if (family_member::whereEmail($request->email)->exists())
+                $type = 'P';
+            }
+            else if (family_member::whereEmail($request->email)->exists()) {
                 $user = family_member::whereEmail($request->email)->first();
+                $type = 'F';
+            }
             else return 'Email not found...';
 
             if ($request->password == $user->password)
             {
                 session_start();
+                $_SESSION['type'] = $type;
                 $_SESSION['logged_in'] = true;
                 $_SESSION['id'] = $user->id;
                 $_SESSION['role_name'] = roles::where('id', '=', $user->role_id)->pluck('title')->first();
