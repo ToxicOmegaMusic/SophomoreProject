@@ -91,7 +91,7 @@
 </body>
 
 
-<script src="doctorHomeHIdeOthersWhileSearching.js"></script>
+<script src="doctorHomeHideOthersWhileSearching.js"></script>
 
 
 <script>
