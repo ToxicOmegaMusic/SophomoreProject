@@ -7,8 +7,8 @@
 
 <body>
     <div class="error"></div>
-        <form action="/api/approval" method="POST">
-        {{-- <form action="http://172.31.109.60:6969/api/approval" method="POST"> --}}
+        {{-- <form action="/api/approval" method="POST"> --}}
+        <form action="http://172.31.109.60:6969/api/approval" method="POST">
         <table>
                 <tr>
                     <th>Approve</th>

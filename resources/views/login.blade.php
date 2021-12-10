@@ -8,8 +8,8 @@
     <div class="error"></div>
     <div class="home-redirect" onclick="location.href='/';"></div> <!-- This makes me a certified HACKER -->
 
-        <form action="/api/login" method="GET"> 
-        {{-- <form action="http://172.31.109.60:6969/api/login" method="GET">  --}}
+        {{-- <form action="/api/login" method="GET">  --}}
+        <form action="http://172.31.109.60:6969/api/login" method="GET"> 
             <div class="login-banner"></div>
 
             <input type="text" name="email" placeholder="email"/>
@@ -17,7 +17,7 @@
             <input type="password" name="password" placeholder="password"/>
 
             <input type="submit" name="sub" value="Login">
-     </form>
+        </form>
 
     <div class="aligner-element"></div>
 
