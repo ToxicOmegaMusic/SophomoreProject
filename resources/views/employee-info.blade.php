@@ -22,6 +22,7 @@
         <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
     </div>
     
+    <table>
         <tr>
             <th>ID</th>
             <th>Name</th>

@@ -4,8 +4,8 @@ use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\RosterController;
-use App\Http\Controllers\NewRosterController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\NewRosterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -19,15 +19,18 @@ use Illuminate\Support\Facades\DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+### FUNCTIONALITY DONE ###
+###### STYLING DONE ######
 Route::get('/', function () {
     return view('welcome');
 });
-
+### FUNCTIONALITY DONE ###
+###### STYLING DONE ######
 Route::get('/login', function () {
     return view('login');
 });
-
+### FUNCTIONALITY DONE ###
+###### STYLING DONE ######
 Route::get('/register', function () {
     return view('register');
 });
