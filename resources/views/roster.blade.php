@@ -6,7 +6,10 @@
 </head>
 
 <body>
-    <div class="error"></div>
+    <!-- Error div -->
+        <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
+            <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
+        </div>
     <form action="api/roster" method="POST">
         <label for="date">Date</label>
         <input type="date" name="date" id="date">

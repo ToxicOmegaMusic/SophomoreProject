@@ -17,8 +17,11 @@
         
     </form>
     
-    <div class="error"></div>
-    <table>
+    <!-- Error div -->
+    <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
+        <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
+    </div>
+    
         <tr>
             <th>ID</th>
             <th>Name</th>

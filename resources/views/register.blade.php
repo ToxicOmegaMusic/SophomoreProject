@@ -8,7 +8,10 @@
 </head>
 
 <body class="flex flex-col items-center bg-green-600">
-    <div class="error"></div>
+    <!-- Error div -->
+        <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
+            <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
+        </div>
 
     <!-- This is the HOME banner -->
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
