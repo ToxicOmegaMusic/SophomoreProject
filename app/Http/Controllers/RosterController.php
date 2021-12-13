@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class RoleController extends Controller
+class RosterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = DB::table('roles')
-            ->get()->toArray();
-        return view('new-role', compact('roles'));
+        return 'Roster Controller Index';
     }
 
     /**
@@ -27,8 +26,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        DB::insert('insert into roles (title, access_level) values (?, ?)', [$request->roleName, $request->accessLevel]);
-        return back();
+        return "Roster Controller Store";
     }
 
     /**
@@ -39,6 +37,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

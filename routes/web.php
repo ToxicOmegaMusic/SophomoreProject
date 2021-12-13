@@ -4,6 +4,7 @@ use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\RosterController;
+use App\Http\Controllers\NewRosterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
