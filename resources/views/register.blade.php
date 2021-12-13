@@ -7,13 +7,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
-<body class="flex flex-col items-center bg-green-500">
+<body class="flex flex-col items-center bg-green-600">
 
     <!-- This is the HOME banner -->
-    <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
-    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3"> <!-- COOL FORM BORDER -->
-        <form class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl" action="http://172.31.109.60:6969/api/register" method="POST">
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
+        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" action="http://172.31.109.60:6969/api/register" method="POST">
 
             <!-- The WELCOME banner above the form -->
             <div class="flex flex-col items-center w-3/5 items-center mt-10 p-4 mb-10 rounded-xl">
@@ -92,7 +92,7 @@
 
             </div>
 
-            <input class="flex justify-center bg-green-900 w-64 font-serif text-3xl text-white rounded-xl h-16 mb-10 hover:bg-green-700" type="submit" name="sub"/>
+            <input class="flex justify-center bg-green-900 w-64 font-serif text-3xl text-indigo-200 rounded-xl h-16 mb-10 hover:bg-green-700 shadow-xl" type="submit" name="sub"/>
         </form>
     </div>
 

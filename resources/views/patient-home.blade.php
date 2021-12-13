@@ -13,11 +13,11 @@ To find and remove the comment-in and comment-out lines, ctrl+F and type "ARH."
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
-<body class="flex flex-col items-center bg-green-500">
-     <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-40 items-center w-full cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+<body class="flex flex-col items-center bg-green-600">
+     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
-    <div class="flex flex-col bg-green-900 rounded-xl w-auto m-20 p-3"> <!-- COOL FORM BORDER -->
-        <div class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl">
+    <div class="flex flex-col bg-green-900 rounded-xl w-auto m-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl">
             <form class="flex flex-col items-center">  
                 <label for="patient-id">Patient ID</label>
                 <input class="bg-white" type="text" value="" name="patient-id" id="patientID" disabled>
@@ -28,7 +28,7 @@ To find and remove the comment-in and comment-out lines, ctrl+F and type "ARH."
                 <label for="date">Date</label>
                 <input type="date" name="date" id="date" required>
                     
-                <button class="text-xl bg-green-900 rounded-xl text-white text-serif w-20 h-10 hover:bg-green-700 cursor-pointer mt-4 mb-4" type="submit">Search</button>
+                <button class="text-xl bg-green-900 rounded-xl text-indigo-200 text-serif w-20 h-10 hover:bg-green-700 cursor-pointer mt-4 mb-4 shadow-xl" type="submit">Search</button>
             </form>
             
             <table>

@@ -6,13 +6,13 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
-<body class="flex flex-col items-center bg-green-500">
+<body class="flex flex-col items-center bg-green-600">
 
     <!-- This is the HOME banner -->
-    <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
-    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3"> <!-- COOL FORM BORDER -->
-        <form class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl" action="http://172.31.109.60:6969/api/login" method="GET"> 
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
+        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" action="http://172.31.109.60:6969/api/login" method="GET"> 
             
             <!-- Login banner thingie -->
             <div class="flex flex-col items-center w-3/5 items-center mt-10 p-4 mb-5 rounded-xl">
@@ -24,7 +24,7 @@
 
             <input class="w-80 h-10 mt-5 mb-10 pl-3 border-2 border-gray-500" type="password" name="password" placeholder="password"/>
 
-            <input class="w-80 h-16 flex justify-center bg-green-900 w-64 font-serif text-3xl text-white hover:bg-green-700 rounded-xl mb-10" type="submit" name="sub" value="Login">
+            <input class="w-80 h-16 flex justify-center bg-green-900 w-64 font-serif text-3xl text-indigo-200 hover:bg-green-700 rounded-xl mb-10 shadow-xl" type="submit" name="sub" value="Login">
         </form>
     </div>
 

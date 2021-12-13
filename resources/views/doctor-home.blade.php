@@ -8,12 +8,12 @@
     
 
 </head>
-<body class="flex flex-col items-center bg-green-500">
-     <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+<body class="flex flex-col items-center bg-green-600">
+     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
     
-    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3"> <!-- COOL FORM BORDER -->
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
 
-        <div class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl mb-5">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
             <form>
                 <label for="filterBy" class="text-xl">Filter by:</label>
                 
@@ -72,12 +72,12 @@
 
 
 
-        <div class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl">
             <div class="appointmentSearchBarByDate text-xl">
                 Upcoming Appointments
                 <form>
                 <input class="text-xl" type="date">
-                <input class="text-xl bg-green-900 rounded-xl text-white text-serif w-20 h-10 hover:bg-green-700 cursor-pointer" type="submit">
+                <input class="text-xl bg-green-900 rounded-xl text-indigo-200 text-serif w-20 h-10 hover:bg-green-700 cursor-pointer shadow-xl" type="submit">
 
             </div>
 
