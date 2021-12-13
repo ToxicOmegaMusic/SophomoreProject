@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\roster;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -34,7 +35,19 @@ class NewRosterController extends Controller
      */
     public function store(Request $request)
     {
-        return "NewRosterController Store";
+
+        $roster = new roster;
+        $roster->date = $request->date;
+        $roster->supervisor = $request->supervisor;
+        $roster->doctor = $request->doctor;
+        $roster->caregiver1 = $request->caregiver1;
+        $roster->caregiver2 = $request->caregiver2;
+        $roster->caregiver3 = $request->caregiver3;
+        $roster->caregiver4 = $request->caregiver4;
+        $roster->save();
+        
+        return redirect('roster');
+
     }
 
     /**

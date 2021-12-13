@@ -7,7 +7,7 @@
 
 <body>
     <div class="error"></div>
-    <form>
+    <form action="api/roster" method="POST">
         <label for="date">Date</label>
         <input type="date" name="date" id="date">
 
@@ -17,6 +17,7 @@
 
     <table>
         <tr>
+            <th>Date</th>
             <th>Supervisor</th>
             <th>Doctor</th>
             <th>Caregiver 1</th>
@@ -24,23 +25,36 @@
             <th>Caregiver 3</th>
             <th>Caregiver 4</th>
         </tr>
-
-        <tr>
-            <td>Larry</td>
-            <td>DR E Gadd</td>
-            <td>Alf</td>
-            <td>Charlie</td>
-            <td>Barry</td>
-            <td>Chelsea</td>
-        </tr>
-
-        <tr>
-            <td>null</td>
-            <td>null</td>
-            <td>Group A</td>
-            <td>Group B</td>
-            <td>Group C</td>
-            <td>Group D</td>
-        </tr>
+        @if (isset($_SESSION['roster-data']))
+            @foreach ($_SESSION['roster-data'] as $roster)
+                <tr>
+                    <td>{{ $roster->date }}</td>
+                    <td>{{ $roster->supervisor }}</td>
+                    <td>{{ $roster->doctor }}</td>
+                    <td>{{ $roster->caregiver1 }}</td>
+                    <td>{{ $roster->caregiver2 }}</td>
+                    <td>{{ $roster->caregiver3 }}</td>
+                    <td>{{ $roster->caregiver4 }}</td>
+                </tr>
+            @endforeach
+        @else
+            <p>No Data to be displayed</p>
+        @endif
+        
     </table>
 </body>
+
+<style>
+    tr {
+        padding: 0.5vh;
+        border-bottom: 1px solid #006600;
+        display: flex;
+        max-width: 1050px;
+    }
+    th, td {
+        width: 115px
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>

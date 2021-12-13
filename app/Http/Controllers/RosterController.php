@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\employee;
+use App\Models\roster;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class RosterController extends Controller
 {
@@ -15,7 +16,8 @@ class RosterController extends Controller
      */
     public function index()
     {
-        return 'Roster Controller Index';
+        
+        return view('roster');
     }
 
     /**
@@ -26,7 +28,12 @@ class RosterController extends Controller
      */
     public function store(Request $request)
     {
-        return "Roster Controller Store";
+        session_start();
+        $data = DB::table('rosters')
+            ->where('date', '=', $request->date)
+            ->get()->toArray();
+        $_SESSION['roster-data'] = $data;
+        return redirect('roster');
     }
 
     /**

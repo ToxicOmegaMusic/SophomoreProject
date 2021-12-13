@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('new-role', RoleController::class);
+Route::resource('new-role', RoleController::class);
 Route::resource('register', RegisterController::class);
 Route::resource('login', LoginController::class);
 Route::resource('employee-info', EmployeeInfoController::class);

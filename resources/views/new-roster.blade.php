@@ -9,7 +9,7 @@
     <div class="error"></div>
 
     <form action="api/new-roster" method="post">
-        <label for="date">Type to create Roster for</label>
+        <label for="date">Type Date to create Roster for</label>
         <input type="date" name="date" id="date" required>
 
         <label for="supervisor">Select Supervisor for the day</label>
