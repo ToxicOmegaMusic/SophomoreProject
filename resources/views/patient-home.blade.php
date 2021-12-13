@@ -1,11 +1,3 @@
-<!--
-PLEASE READ:
-
-I commented a few things out in this file.
-
-To find and remove the comment-in and comment-out lines, ctrl+F and type "ARH."
--->
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -13,7 +5,8 @@ To find and remove the comment-in and comment-out lines, ctrl+F and type "ARH."
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
-<body class="flex flex-col items-center bg-green-600">
+<body class="flex flex-col items-center bg-green-600"> 
+    <div class="error"></div>
      <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
     <div class="flex flex-col bg-green-900 rounded-xl w-auto m-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
@@ -45,24 +38,21 @@ To find and remove the comment-in and comment-out lines, ctrl+F and type "ARH."
                         <th><strong>Dinner</strong></th>
                     </tr>
                 </thead>
-                <tbody>
-                <!-- ARH
-                    {{-- ARH @foreach($data as $d) ARH --}}
-                    <tr>
-                        {{-- ARH <th>{{ $d->id }}</th> ARH --}}
-                        {{-- ARH <th>{{  }}</th> ARH --}}
-                        {{-- ARH <th>{{  }}</th> ARH --}}
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    {{-- ARH @endforeach ARH --}}
-                    ARH  -->
-                </tbody>
-            </table>
+                
+             
+                @foreach($data as $d)
+                <tr class="body">
+                    <td>{{ $doctor['0']->f_name.' '.$doctor['0']->l_name }}</td>
+                    <td>{{ $d->appointment_id }}</td>
+                    <td>{{ $caregiver[0]->f_name.' '.$caregiver[0]->l_name }}</td>
+                    <td>{{ $d->morning_prescription }}</td>
+                    <td>{{ $d->afternoon_prescription }}</td>
+                    <td>{{ $d->night_prescription }}</td>
+                    <td>placeholder breakfast</td>
+                    <td>placeholder lunch</td>
+                    <td>placeholder dinner</td>
+                </tr>
+                @endforeach
         </div>
     </div>
 

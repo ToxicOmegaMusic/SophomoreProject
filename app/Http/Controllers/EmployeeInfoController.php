@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class RoleController extends Controller
+class EmployeeInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = DB::table('roles')
+        $data = DB::table('employees')
             ->get()->toArray();
-        return view('new-role', compact('roles'));
+        return view('employee-info', compact('data'));
     }
 
     /**
@@ -27,8 +28,18 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        DB::insert('insert into roles (title, access_level) values (?, ?)', [$request->roleName, $request->accessLevel]);
-        return back();
+        session_start();
+
+        // dd($_SESSION);
+        if ($_SESSION['access_level'] == 1) {
+            $employee = employee::find($request['employeeID']);
+            $employee->salary = $request['newSalary'];
+            $employee->save();
+    
+            return back();
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -39,6 +50,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -50,7 +62,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd('test');
     }
 
     /**

@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <div class="error"></div>
     <form>
         <label for="patientID">Patient ID</label>
         <input type="text" name="patientID" id="patientID">

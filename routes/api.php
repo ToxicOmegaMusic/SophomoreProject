@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RosterController;
+use App\Http\Controllers\NewRosterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+Route::resource('new-role', RoleController::class);
 Route::resource('register', RegisterController::class);
-
 Route::resource('login', LoginController::class);
+Route::resource('employee-info', EmployeeInfoController::class);
+Route::resource('approval', ApprovalController::class);
+Route::resource('roster', RosterController::class);
+Route::resource('new-roster', NewRosterController::class);

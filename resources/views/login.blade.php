@@ -8,6 +8,8 @@
 </head>
 <body class="flex flex-col items-center bg-green-600">
 
+    <div class="error"></div>
+
     <!-- This is the HOME banner -->
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
@@ -28,7 +30,5 @@
         </form>
     </div>
 
-<div class="aligner-element"></div>
-
-</body>
+    </body>
 </html>
