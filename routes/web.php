@@ -4,6 +4,7 @@ use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\RosterController;
+use App\Http\Controllers\NewRosterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -110,12 +111,11 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
 ##### THIS ROUTE FINISHED/WORKING #####
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
     Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
-    Route::post('/employee-info', [EmployeeInfoController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
+    Route::get('/new-roster', [NewRosterController::class, 'index']);
     Route::get('/roster', [RosterController::class, 'index']);
-    Route::post('/new-roster', [RosterController::class, 'store']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function () {
