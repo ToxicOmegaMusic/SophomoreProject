@@ -5,6 +5,7 @@ use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\RosterController;
 use App\Http\Controllers\NewRosterController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -46,7 +47,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
 
     Route::get('/roster', [RosterController::class, 'index']);
-    Route::post('/new-roster', [RosterController::class, 'store']);
+    Route::get('/new-roster', [RosterController::class, 'index']);
     Route::get('/payment', function () { return view('payment'); });
     Route::get('/doctor-appointment', function () { return view('doctor-appointment'); });
     Route::get('/patient-info', function () { return view('patient-info'); });
