@@ -8,10 +8,10 @@
     
 
 </head>
-<body class="flex flex-col items-center bg-gradient-to-t from-green-900 to-green-400">
+<body class="flex flex-col items-center bg-green-500">
      <div class="flex font-serif text-5xl text-center justify-center text-white bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
     
-    <div class="flex flex-col bg-gradient-to-t from-green-400 to-green-900 rounded-xl w-3/5 mb-20 p-3"> <!-- COOL FORM BORDER -->
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3"> <!-- COOL FORM BORDER -->
 
         <div class="flex flex-col bg-green-100 w-full items-center h-auto rounded-xl mb-5">
             <form>

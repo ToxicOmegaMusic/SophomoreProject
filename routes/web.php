@@ -30,15 +30,28 @@ Route::get('/tail', function() {
     return view('tailwind');
 });
 
+/* This is temporary
+- ARH
+*/
 Route::get('/doctor-home', function() { /* Keep this here for now */
         return view('doctor-home');
 });
+
+/* This is temporary
+- ARH
+*/
+Route::get('/patient-home', function() { /* Keep this here for now */
+        return view('patient-home');
+});
+
+/* --- ARH (ctrl+f "ARH" to find and remove all the comment-slashes I added)
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     
 });
 
 // Note the new kind of route that may or may not work
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:3'])->group(function () {
     Route::get('/doctor-home/patient', function() {
         return view('doctor-patient');
@@ -51,13 +64,16 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:4'])->group(function () {
     });
 });
 
-Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
-    Route::get('/patient-home', function() {
-        $data = DB::table('doctor_appointments')->get()->toArray();
-        return view('patient-home')->with('data', $data);
-    });
-});
 
+Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
+    
+    $data = DB::table('doctor_appointments')->get()->toArray();
+        return view('patient-home')->with('data', $data);
+    
+});
+--- ARH */
+
+/* --- ARH
 Route::middleware(['App\Http\Middleware\UserMiddleware:6'])->group(function () {
     Route::get('/family-home', function() {
         return view('family-home');
@@ -137,3 +153,5 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
         return view('payment');
     });
 });
+
+--- ARH */
