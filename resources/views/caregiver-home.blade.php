@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Caregiver Home</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('logged-in-home.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
 <body>

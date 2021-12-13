@@ -32,6 +32,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(function () {
     Route::get('/patients', function() { return view('patients'); });
 });
@@ -75,6 +76,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:5'])->group(function () {
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:6'])->group(function () {
+
 
     Route::get('/family-home', function() { return view('family-home'); });
 });
