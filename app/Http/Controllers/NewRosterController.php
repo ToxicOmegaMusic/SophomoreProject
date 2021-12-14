@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\employee;
 use App\Models\roster;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,15 +36,23 @@ class NewRosterController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        // returns name found by id
+        function getNameByID($id) {
+            $employee = DB::table('employees')
+                            ->where('id', $id)
+                            ->get()->first();
+            $output = $employee->f_name." ".$employee->l_name;
+            return $output;
+        }
+        
         $roster = new roster;
         $roster->date = $request->date;
-        $roster->supervisor = $request->supervisor1;
-        $roster->doctor = $request->doctor1;
-        $roster->caregiver1 = $request->caregiver1;
-        $roster->caregiver2 = $request->caregiver2;
-        $roster->caregiver3 = $request->caregiver3;
-        $roster->caregiver4 = $request->caregiver4;
+        $roster->supervisor = getNameByID($request->supervisorID);
+        $roster->doctor = getNameByID($request->doctorID);
+        $roster->caregiver1 = getNameByID($request->caregiver1ID);
+        $roster->caregiver2 = getNameByID($request->caregiver2ID);
+        $roster->caregiver3 = getNameByID($request->caregiver3ID);
+        $roster->caregiver4 = getNameByID($request->caregiver4ID);
         $roster->supervisorID = $request->supervisorID;
         $roster->doctorID = $request->doctorID;
         $roster->caregiver1ID = $request->caregiver1ID;
