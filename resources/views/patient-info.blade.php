@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
 </head>
 <body>
-    <form>
+    <form method="post" action="api/patient-info">
             <label for="filterBy">Filter by:</label>
             
             <select name="filterBy" id="filterBy">        
@@ -13,7 +13,7 @@
                 <option value="patientName">Patient Name</option>
                 <option value="age">Patient Age</option>
                 <option value="emergencyNumber">Emergency Phone Number</option>
-                <option value="emergencyName">Emergency Phone Number</option>
+                <option value="emergencyName">Emergency Name</option>
                 <option value="admissionDate">Date</option>
             </select>
 
@@ -28,6 +28,8 @@
             <input name="emergencyName" id="emergencyName" type="text" placeholder="Emergency Name">
 
             <input name="admissionDate" id="admissionDate" type="date">
+
+            <button type="submit">Submit</button>
         
     </form>
 
@@ -40,8 +42,36 @@
             <th>Emergency Contact Name</th>
             <th>Admission Date</th>
         </tr>
+
+        @if (isset($_SESSION['patient-data']))
+            @foreach ($_SESSION['patient-data'] as $patient)
+                <tr>
+                    <td>{{ $patient->id }}</td>
+                    <td>{{ $patient->f_name." ".$patient->l_name }}</td>
+                    <td>{{ $patient->age }}</td>
+                    <td>{{ $patient->ec_phone }}</td>
+                    <td>{{ $patient->ec_name }}</td>
+                    <td>{{ $patient->admission_date }}</td>
+                </tr>
+            @endforeach
+        @endif
     </table>
 </body>
+
+<style>
+    tr {
+        padding: 0.5vh;
+        border-bottom: 1px solid #006600;
+        display: flex;
+        max-width: 1050px;
+    }
+    th, td {
+        width: 115px;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 

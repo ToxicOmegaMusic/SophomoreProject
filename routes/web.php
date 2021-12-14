@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\RosterController;
 use App\Http\Controllers\RoleController;
@@ -55,7 +56,7 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     Route::get('/new-roster', [NewRosterController::class, 'index']);
     Route::get('/payment', function () { return view('payment'); });
     Route::get('/doctor-appointment', [AppointmentController::class, 'index']);
-    Route::get('/patient-info', function () { return view('patient-info'); });
+    Route::get('/patient-info', [PatientController::class, 'index']);
 });
 
 Route::middleware(['App\Http\Middleware\UserMiddleware:2'])->group(function () {

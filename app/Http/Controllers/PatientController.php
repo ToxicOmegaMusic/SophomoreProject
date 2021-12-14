@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
@@ -13,7 +14,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        return view('patient-info');
     }
 
     /**
@@ -24,7 +25,42 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        session_start();
+        if ($request->filterBy == 'patientID') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('id', $request->patientID)
+                        ->get()->toArray();
+            if ($request->patientID == 0){
+                $_SESSION['patient-data'] = DB::table('patients')
+                        ->get()->toArray();
+            }
+            return back();
+        } elseif ($request->filterBy == 'patientName') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('f_name', $request->patientName)
+                        ->get()->toArray();
+            return back();
+        } elseif ($request->filterBy == 'age') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('age', $request->age)
+                        ->get()->toArray();
+            return back();
+        } elseif ($request->filterBy == 'emergencyNumber') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('ec_phone', $request->emergencyNumber)
+                        ->get()->toArray();
+            return back();
+        } elseif ($request->filterBy == 'emergencyName') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('ec_name', $request->emergencyName)
+                        ->get()->toArray();
+            return back();
+        } elseif ($request->filterBy == 'admissionDate') {
+            $_SESSION['patient-data'] = DB::table('patients')
+                        ->where('admission_date', $request->admissionDate)
+                        ->get()->toArray();
+            return back();
+        }
     }
 
     /**

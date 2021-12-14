@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RosterController;
 use App\Http\Controllers\NewRosterController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,5 @@ Route::resource('employee-info', EmployeeInfoController::class);
 Route::resource('approval', ApprovalController::class);
 Route::resource('roster', RosterController::class);
 Route::resource('new-roster', NewRosterController::class);
-Route::resource('doctor-appointment', AppointmentController::class);
+Route::resource('new-roster', NewRosterController::class);
+Route::resource('patient-info', PatientController::class);
