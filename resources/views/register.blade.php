@@ -56,7 +56,7 @@
 
                 <div class="flex flex-col mb-5">
                     <label for="phone" class="text-xl">Phone Number</label>
-                    <input class="h-10 border-2 border-gray-500 pl-3" type="text" class="phoneNumber" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" required>
+                    <input class="phoneNumber h-10 border-2 border-gray-500 pl-3" type="text" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" required>
                 </div>
 
                 <div class="flex flex-col mb-5">
