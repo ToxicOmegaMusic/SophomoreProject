@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\PatientHomeController;
 use App\Http\Controllers\ApprovalController;
@@ -51,9 +52,9 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:2 1'])->group(function ()
     Route::get('/employee-info', [EmployeeInfoController::class, 'index']);
 
     Route::get('/roster', [RosterController::class, 'index']);
-    Route::get('/new-roster', [RosterController::class, 'index']);
+    Route::get('/new-roster', [NewRosterController::class, 'index']);
     Route::get('/payment', function () { return view('payment'); });
-    Route::get('/doctor-appointment', function () { return view('doctor-appointment'); });
+    Route::get('/doctor-appointment', [AppointmentController::class, 'index']);
     Route::get('/patient-info', function () { return view('patient-info'); });
 });
 

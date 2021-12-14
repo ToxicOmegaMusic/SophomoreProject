@@ -12,54 +12,67 @@
     </div>
 
     <form action="api/new-roster" method="post">
+
+        @foreach ($caregivers as $c)
+        <input type="hidden" name="{{ 'caregiver'.$loop->iteration }}" value="{{ $c->f_name." ".$c->l_name }}">
+        @endforeach
+
+        @foreach ($supervisors as $s)
+            <input type="hidden" name="{{ 'supervisor'.$loop->iteration }}" value="{{ $s->f_name." ".$s->l_name }}">
+        @endforeach
+
+        @foreach ($doctors as $d)
+            <input type="hidden" name="{{ 'doctor'.$loop->iteration }}" value="{{ $d->f_name." ".$d->l_name }}">
+        @endforeach
+
         <label for="date">Type Date to create Roster for</label>
         <input type="date" name="date" id="date" required>
 
         <label for="supervisor">Select Supervisor for the day</label>
-        <select name="supervisor" id="supervisor" required>
+        <select name="supervisorID" id="supervisor" required>
             <option selected disabled value="">Select supervisor</option>
             @foreach ($supervisors as $s )
-            <option value="{{ $s->f_name." ".$s->l_name }}">{{ $s->f_name." ".$s->l_name }}</option>
+            <option value="{{ $s->id }}">{{ $s->f_name." ".$s->l_name }}</option>
             @endforeach
         </select>
             
         <label for="doctor">Select Doctor for the day</label>
-        <select name="doctor" id="doctor" required>
+        <select name="doctorID" id="doctor" required>
             <option selected disabled value="">Select Doctor</option>
             @foreach ($doctors as $d )
-            <option value="{{ $d->f_name." ".$d->l_name }}">{{ $d->f_name." ".$d->l_name }}</option>
+            <option value="{{ $d->id }}">{{ $d->f_name." ".$d->l_name }}</option>
             @endforeach
         </select>
-        
+
         <label for="caregiver1">Select Caregiver for the day</label>
-        <select name="caregiver1" id="caregiver1" required>
+        <select name="caregiver1ID" id="caregiver1" required>
             <option selected disabled value="">Select caregiver 1</option>
             @foreach ($caregivers as $c )
-                <option value="{{ $c->f_name." ".$c->l_name }}">{{ $c->f_name." ".$c->l_name }}</option>
+            <option value="{{ $c->id }}">{{ $c->f_name." ".$c->l_name }}</option>
             @endforeach
         </select>
 
         <label for="caregiver2">Select Caregiver for the day</label>
-        <select name="caregiver2" id="caregiver2" required>
+        <select name="caregiver2ID" id="caregiver2" required>
             <option selected disabled value="">Select caregiver 2</option>
             @foreach ($caregivers as $c )
-                <option value="{{ $c->f_name." ".$c->l_name }}">{{ $c->f_name." ".$c->l_name }}</option>
+                <option value="{{ $c->id }}">{{ $c->f_name." ".$c->l_name }}</option>
             @endforeach
         </select>
 
         <label for="caregiver3">Select Caregiver for the day</label>
-        <select name="caregiver3" id="caregiver3" required>
+        <select name="caregiver3ID" id="caregiver3" required>
             <option selected disabled value="">Select caregiver 3</option>
             @foreach ($caregivers as $c )
-                <option value="{{ $c->f_name." ".$c->l_name }}">{{ $c->f_name." ".$c->l_name }}</option>
+                <option value="{{ $c->id }}">{{ $c->f_name." ".$c->l_name }}</option>
             @endforeach
         </select>
-
+        
         <label for="caregiver4">Select Caregiver for the day</label>
-        <select name="caregiver4" id="caregiver4" required>
+        <select name="caregiver4ID" id="caregiver4" required>
             <option selected disabled value="">Select caregiver 4</option>
             @foreach ($caregivers as $c )
-                <option value="{{ $c->f_name." ".$c->l_name }}">{{ $c->f_name." ".$c->l_name }}</option>
+                <option value="{{ $c->id }}">{{ $c->f_name." ".$c->l_name }}</option>
             @endforeach
         </select>
 

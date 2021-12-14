@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\LoginController;
@@ -27,3 +28,4 @@ Route::resource('employee-info', EmployeeInfoController::class);
 Route::resource('approval', ApprovalController::class);
 Route::resource('roster', RosterController::class);
 Route::resource('new-roster', NewRosterController::class);
+Route::resource('doctor-appointment', AppointmentController::class);

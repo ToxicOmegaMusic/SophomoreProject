@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\doctor_appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PatientHomeController extends Controller
+class AppointmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +15,12 @@ class PatientHomeController extends Controller
      */
     public function index()
     {
-        $data = DB::table('doctor_appointments')
-            ->join('patients', 'patients.id', '=', 'doctor_appointments.patient_id')
+        $roster = DB::table('rosters')
             ->get()->toArray();
-        dd($data);
-        $doctor = DB::table('employees')
-            ->where('id', '=', $data['0']->employee_id)
+        $patients = DB::table('patients')
             ->get()->toArray();
-        $caregiver = DB::table('employees')
-            ->where("role_id", '=', "4")
-            ->get()->toArray();
-        return view('patient-home', compact('data', 'doctor', 'caregiver'));
+        // dd($roster);
+        return view('doctor-appointment', compact('roster', 'patients'));
     }
 
     /**
@@ -35,7 +31,20 @@ class PatientHomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employee = DB::table('employees')
+                        ->get()->toArray();
+
+        $appointment = new doctor_appointment();
+        $appointment->employee_id = $request->doctorID;
+        $appointment->patient_id = $request->patientID;
+        $appointment->date = $request->date;
+        $appointment->comment = '';
+        $appointment->morning_prescription = '';
+        $appointment->afternoon_prescription = '';
+        $appointment->night_prescription = '';
+        $appointment->save();
+
+        return back();
     }
 
     /**

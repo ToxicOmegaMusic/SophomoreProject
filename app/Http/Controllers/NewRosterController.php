@@ -35,19 +35,24 @@ class NewRosterController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $roster = new roster;
         $roster->date = $request->date;
-        $roster->supervisor = $request->supervisor;
-        $roster->doctor = $request->doctor;
+        $roster->supervisor = $request->supervisor1;
+        $roster->doctor = $request->doctor1;
         $roster->caregiver1 = $request->caregiver1;
         $roster->caregiver2 = $request->caregiver2;
         $roster->caregiver3 = $request->caregiver3;
         $roster->caregiver4 = $request->caregiver4;
+        $roster->supervisorID = $request->supervisorID;
+        $roster->doctorID = $request->doctorID;
+        $roster->caregiver1ID = $request->caregiver1ID;
+        $roster->caregiver2ID = $request->caregiver2ID;
+        $roster->caregiver3ID = $request->caregiver3ID;
+        $roster->caregiver4ID = $request->caregiver4ID;
         $roster->save();
         
         return redirect('roster');
-
     }
 
     /**
