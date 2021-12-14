@@ -17,7 +17,7 @@
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
-        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" action="/api/register" method="POST">
+        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" action="api/register" method="POST">
 
 
             <!-- The WELCOME banner above the form -->
