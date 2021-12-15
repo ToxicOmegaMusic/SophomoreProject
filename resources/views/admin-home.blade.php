@@ -25,7 +25,7 @@
       });
     </script>
 
-
+    <p>Missed Patient Activity</p>
     <table>
         <tr>
             <th>Patients name</th>
