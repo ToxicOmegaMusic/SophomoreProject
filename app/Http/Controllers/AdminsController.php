@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-class PatientHomeController extends Controller
+class AdminsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +13,7 @@ class PatientHomeController extends Controller
      */
     public function index()
     {
-        $data = DB::table('doctor_appointments')
-            ->join('patients', 'patients.id', '=', 'doctor_appointments.patient_id')
-            ->get()->toArray();
-        $doctor = DB::table('employees')
-            ->where('id', '=', $data['0']->employee_id)
-            ->get()->toArray();
-        $caregiver = DB::table('employees')
-            ->where("role_id", '=', "4")
-            ->get()->toArray();
-        return view('patient-home', compact('data', 'doctor', 'caregiver'));
+        return view('admin-home');
     }
 
     /**
@@ -34,9 +24,27 @@ class PatientHomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        // returns name found by id
+        function getNameByID($id) {
+            $employee = DB::table('employees')
+                            ->where('id', $id)
+                            ->get()->first();
+            $output = $employee->f_name." ".$employee->l_name;
+            return $output;
+        }
+        $_SESSION['AR'] = DB::table('doctor_appointments')
+                        ->join('employees', 'doctor_appointments.employee_id', '=', 'employees.id')
+                        ->join('caregivers', 'doctor_appointments.date', '=', 'caregivers.date')
+                        ->get()->toArray();
 
+        // $_SESSION['AR-doctorApps'] = DB::table('doctor_appointments')
+        //             ->get()->toArray();
+        // $_SESSION['AR-caregivers'] = DB::table('doctor_appointments')
+        //             ->get()->toArray();
+        dd($_SESSION['AR'], $_SESSION['AR-doctorApps']);
+
+        return redirect('admin-home');
+    }
     /**
      * Display the specified resource.
      *

@@ -14,7 +14,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <form id="form">
+    <form id="form" action="api/admin-home" method="POST">
         <input type="date" name="date" id="date">
     </form>
 
@@ -40,17 +40,8 @@
             <th>Dinner</th>
         </tr>
 
-        <tr>
-            <td>Charlie</td>
-            <td>Armedia De Palma</td>
-            <td>10/20/2021</td>
-            <td>Carl Calewell</td>
-            <td><input type="checkbox" disabled></td>
-            <td><input type="checkbox" disabled></td>
-            <td><input type="checkbox" disabled></td>
-            <td><input type="checkbox" disabled></td>
-            <td><input type="checkbox" disabled></td>
-            <td><input type="checkbox" disabled></td>
-        </tr>
+        {{-- @foreach ( as )
+            
+        @endforeach --}}
     </table>
 </body>

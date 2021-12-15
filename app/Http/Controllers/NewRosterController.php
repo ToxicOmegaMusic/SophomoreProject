@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\caregiver;
 use App\Models\employee;
 use App\Models\roster;
 use Illuminate\Http\Request;
@@ -60,6 +61,11 @@ class NewRosterController extends Controller
         $roster->caregiver3ID = $request->caregiver3ID;
         $roster->caregiver4ID = $request->caregiver4ID;
         $roster->save();
+
+        //this was for later, might delete, likely to get forgotten.
+        $caregiver1 = DB::table('caregivers')
+                        ->where('id', $request->caregiver1ID)
+                        ->update(['date' => $request->date]);
         
         return redirect('roster');
     }

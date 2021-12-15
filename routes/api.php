@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\CaregiverController;
+use App\Http\Controllers\DoctorHomeController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -31,3 +34,7 @@ Route::resource('roster', RosterController::class);
 Route::resource('new-roster', NewRosterController::class);
 Route::resource('new-roster', NewRosterController::class);
 Route::resource('patient-info', PatientController::class);
+Route::resource('admin-home', AdminsController::class);
+Route::resource('doctor-appointment', AppointmentController::class);
+Route::resource('doctor-home', DoctorHomeController::class);
+Route::resource('caregiver-home', CaregiverController::class);
