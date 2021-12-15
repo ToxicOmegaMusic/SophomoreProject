@@ -2,49 +2,62 @@
 <head>
     <meta charset="utf-8"/>
     <title>Employee Info</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
-<body>
+<body class="flex flex-col items-center bg-green-600">
+
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+
     <!-- Error div -->
-        <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
-            <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
-        </div>
-    <form action="api/roster" method="POST">
-        <label for="date">Date</label>
-        <input type="date" name="date" id="date">
+    <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
+        <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
+    </div>
 
-        <input type="submit" name="submit" id="submit">
+    <div class="flex flex-col bg-green-900 rounded-xl w-auto mb-20 p-3 shadow-xl">
 
-    </form>
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
 
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Supervisor</th>
-            <th>Doctor</th>
-            <th>Caregiver 1</th>
-            <th>Caregiver 2</th>
-            <th>Caregiver 3</th>
-            <th>Caregiver 4</th>
-        </tr>
-        @if (isset($_SESSION['roster-data']))
-            @foreach ($_SESSION['roster-data'] as $roster)
+            <form action="api/roster" method="POST">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date">
+
+                <input type="submit" name="submit" id="submit">
+
+            </form>
+
+            <table>
                 <tr>
-                    <td>{{ $roster->date }}</td>
-                    <td>{{ $roster->supervisor }}</td>
-                    <td>{{ $roster->doctor }}</td>
-                    <td>{{ $roster->caregiver1 }}</td>
-                    <td>{{ $roster->caregiver2 }}</td>
-                    <td>{{ $roster->caregiver3 }}</td>
-                    <td>{{ $roster->caregiver4 }}</td>
+                    <th>Date</th>
+                    <th>Supervisor</th>
+                    <th>Doctor</th>
+                    <th>Caregiver 1</th>
+                    <th>Caregiver 2</th>
+                    <th>Caregiver 3</th>
+                    <th>Caregiver 4</th>
                 </tr>
-            @endforeach
-        @else
-            <p>No Data to be displayed</p>
-        @endif
-        
-    </table>
+
+                {{-- ARH
+                @if (isset($_SESSION['roster-data']))
+                    @foreach ($_SESSION['roster-data'] as $roster)
+                        <tr>
+                            <td>{{ $roster->date }}</td>
+                            <td>{{ $roster->supervisor }}</td>
+                            <td>{{ $roster->doctor }}</td>
+                            <td>{{ $roster->caregiver1 }}</td>
+                            <td>{{ $roster->caregiver2 }}</td>
+                            <td>{{ $roster->caregiver3 }}</td>
+                            <td>{{ $roster->caregiver4 }}</td>
+                        </tr>
+                    @endforeach
+                @else
+                    <p>No Data to be displayed</p>
+                @endif
+                ARH --}}
+                
+            </table>
+        </div>
+    </div>
 </body>
 
 <style>

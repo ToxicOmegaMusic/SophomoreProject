@@ -5,37 +5,43 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
-<body>
-    <form action="api/new-role" method="POST">
-        
+<body class="flex flex-col items-center bg-green-600">
+
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+
     <!-- Error div -->
     <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
         <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
     </div>
     
-        <label for="roleName">New Role Name</label>
-        <input type="text" name="roleName" id="roleName">
-        <label for="roleName">Access Level</label>
-        <input type="number" name="accessLevel" id="accessLevel">
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
+            <form action="api/new-role" method="POST">
+                <label for="roleName">New Role Name</label>
+                <input type="text" name="roleName" id="roleName">
+                <label for="roleName">Access Level</label>
+                <input type="number" name="accessLevel" id="accessLevel">
 
-        <input type="submit" name="OK" id="OK" value="OK">
-        <input type="button" name="cancel" id="cancel" value="cancel" onclick="location.href='/';">
-    </form>
+                <input type="submit" name="OK" id="OK" value="OK">
+                <input type="button" name="cancel" id="cancel" value="cancel" onclick="location.href='/';">
+            </form>
 
-    <table>
-        <tr>
-            <th>Role Name</th>
-            <th>Access Level</th>
-        </tr>
-        @foreach ($data as $r )
-            <tr>
-                <td>{{ $r->title }}</td>
-                <td>{{ $r->access_level }}</td>
-            </tr>
-        @endforeach
+            <table>
+                <tr>
+                    <th>Role Name</th>
+                    <th>Access Level</th>
+                </tr>
 
-        
-    </table>
+                {{-- ARH
+                @foreach ($data as $r )
+                    <tr>
+                        <td>{{ $r->title }}</td>
+                        <td>{{ $r->access_level }}</td>
+                    </tr>
+                @endforeach
+                ARH --}}
+                
+            </table>
 
 </body>
 

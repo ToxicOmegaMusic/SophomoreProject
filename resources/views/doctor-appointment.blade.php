@@ -2,33 +2,43 @@
 <head>
     <meta charset="utf-8"/>
     <title>Doctor appointment</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('login-reg.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
-<body>
-    <form action="api/doctor-appointment" method="post">
-        <label for="patientID">Patient ID</label>
-        <input type="text" id="patientID" name="patientID" required>
 
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date" required>
+<body class="flex flex-col items-center bg-green-600">
 
-        <label for="doctor">Doctor</label>
-        <select name="doctorID" id="doctor" required>
-            <option selected disabled value="">Select doctor</option>
-        </select>
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
-        <label for="patientName">Patient Name</label>
-        <input type="text" id="patientName" name="patientName" disabled>
+    <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
+        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5" action="api/doctor-appointment" method="post">
+            <label for="patientID">Patient ID</label>
+            <input type="text" id="patientID" name="patientID" required>
 
-        <input type="submit">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
 
-    </form>
+            <label for="doctor">Doctor</label>
+            <select name="doctorID" id="doctor" required>
+                <option selected disabled value="">Select doctor</option>
+            </select>
+
+            <label for="patientName">Patient Name</label>
+            <input type="text" id="patientName" name="patientName" disabled>
+
+            <input type="submit">
+
+        </form>
+    </div>
 </body>
+
+
+{{-- ARH
+
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
 
-    let roster = <?php echo json_encode($roster); ?>; // this passes the variable from php to javascript
-    let patients = <?php echo json_encode($patients); ?>; 
+    let roster = <?php # ARH echo json_encode($roster); ?>; // this passes the variable from php to javascript
+    let patients = <?php # ARH echo json_encode($patients); ?>; 
 
     // This displays doctors in select 
     $(document).ready(function () {
@@ -63,3 +73,5 @@
     });
 
 </script>
+
+ARH --}}

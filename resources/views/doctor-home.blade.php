@@ -9,7 +9,8 @@
 
 </head>
 <body class="flex flex-col items-center bg-green-600">
-     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
+
+    <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
     <!-- Error div -->
     <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
