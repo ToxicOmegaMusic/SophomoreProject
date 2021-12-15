@@ -31,6 +31,33 @@
     
     <table>
         <tr>
+            <th>Patient Name</th>
+            <th>Morning Meds</th>
+            <th>Afternoon Meds</th>
+            <th>Night Meds</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+        </tr>
+
+        @if (isset($_SESSION['CH']))
+            @foreach ($_SESSION['CH'] as $data)
+                <tr>
+                    <td>{{ $_SESSION['CH-names'][$loop->index][$data->patient_id] }}</td>
+                    <td>{{ $data->morning_med }}</td>
+                    <td>{{ $data->afternoon_med }}</td>
+                    <td>{{ $data->night_med }}</td>
+                    <td>{{ $data->breakfast }}</td>
+                    <td>{{ $data->lunch }}</td>
+                    <td>{{ $data->dinner }}</td>
+                </tr>
+            @endforeach
+        @endif
+
+
+{{-- 
+
+        <tr>
             <td>
                 <input type="text" name="doctor-name" placeholder="Doctor's name">
             </td>
@@ -95,7 +122,7 @@
             <td style="display: flex; justify-content: center;">
                 <input type="submit" name="sub">
             </td>
-        </tr>
+        </tr> --}}
 
     </table>
 
@@ -119,3 +146,21 @@
     $("#date").attr("value", today);
 });
 </script>
+
+<style>
+    tr {
+        padding: 0.5vh;
+        border-bottom: 1px solid #006600;
+        display: flex;
+        max-width: 1050px;
+    }
+    th, td {
+        width: 115px
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    form {
+        border: #006600 solid 1px;
+    }
+</style>
