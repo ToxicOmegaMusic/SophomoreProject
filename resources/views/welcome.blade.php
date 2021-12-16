@@ -17,7 +17,7 @@
 
     </head>
 
-    <body class="flex flex-col items-center bg-green-600 overflow-y-hidden">
+    <body class="flex flex-col items-center bg-green-600">
 
         <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-56 items-center w-full cursor-default">
             Eranthis<br/>Communities

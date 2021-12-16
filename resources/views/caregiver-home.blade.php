@@ -34,13 +34,13 @@
             <table>
                 <tr>
                     <td>
-                        <input class="flex h-8 rounded-xl p-2" type="text" name="doctor-name" placeholder="Doctor's name">
+                        <input class="flex h-8 rounded-xl p-2 mb-3" type="text" name="doctor-name" placeholder="Doctor's name">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input class="flex h-8 rounded-xl p-2" type="text" name="caregiver-name" placeholder="Caregiver's name">
+                        <input class="flex h-8 rounded-xl p-2 mb-3" type="text" name="caregiver-name" placeholder="Caregiver's name">
                     </td>
                 </tr>
 

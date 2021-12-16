@@ -24,7 +24,7 @@
         <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
 
             <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" id="form">
-                <input class="w-2/5 h-10" type="date" name="date" id="date">
+                <input class="w-2/5 h-10 rounded-xl p-2" type="date" name="date" id="date">
             </form>
 
             <script>
