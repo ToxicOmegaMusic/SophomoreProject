@@ -21,10 +21,10 @@
     
     <div class="flex flex-col bg-green-900 rounded-xl w-auto mb-20 p-3 shadow-xl">
 
-        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
 
             <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl" id="form">
-                <input type="date" name="date" id="date">
+                <input class="w-2/5 h-10" type="date" name="date" id="date">
             </form>
 
             <script>
@@ -34,7 +34,7 @@
             });
             </script>
 
-            <p>Missed Patient Activity</p>
+            <p class="text-xl mt-4">Missed Patient Activity</p>
             <table class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl">
                 <tr>
                     <th>Patients name</th>

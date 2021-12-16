@@ -11,20 +11,20 @@
     
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
 
-        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
 
-            <form>
-                <label for="patientID">Patient ID</label>
-                <input type="number" name="patientID" id="patientID" required>
+            <form class="flex flex-col">
+                <label class="text-lg" for="patientID">Patient ID</label>
+                <input class="flex h-8 rounded-xl p-2 mb-4" type="number" name="patientID" id="patientID" required>
                 
-                <label for="group">Group</label>
-                <input type="text" name="group" id="group" required>
+                <label class="text-lg" for="group">Group</label>
+                <input class="flex h-8 rounded-xl p-2 mb-4" type="text" name="group" id="group" required>
                 
-                <label for="admissionDate">Admission Date</label>
-                <input type="date" name="admissionDate" id="admissionDate" required>
+                <label class="text-lg" for="admissionDate">Admission Date</label>
+                <input class="flex h-8 rounded-xl p-2 mb-4" type="date" name="admissionDate" id="admissionDate" required>
                 
-                <label for="patientName">Patient Name</label>
-                <input type="text" name="patientName" id="patientName" disabled>
+                <label class="text-lg" for="patientName">Patient Name</label>
+                <input class="flex h-8 rounded-xl p-2 mb-4" type="text" name="patientName" id="patientName" disabled>
             </form>
 
         </div>

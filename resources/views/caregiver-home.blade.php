@@ -16,31 +16,31 @@
 
 
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
-        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
             <form class="flex flex-col">
                     
-                <label for="patient-id">Patient ID</label>
-                <input type="text" name="patient-id" id="patientID">
+                <label class="text-lg" for="patient-id">Patient ID</label>
+                <input class="flex h-8 rounded-xl p-2" type="text" name="patient-id" id="patientID">
                     
-                <label for="patient-name">Patient Name</label>
-                <input type="text" name="patient-name" id="patient-name">
+                <label class="text-lg" for="patient-name">Patient Name</label>
+                <input class="flex h-8 rounded-xl p-2" type="text" name="patient-name" id="patient-name">
                     
-                <label for="date">Date</label>
-                <input type="date" name="date" id="date" required>
+                <label class="text-lg" for="date">Date</label>
+                <input class="flex h-8 rounded-xl p-2" type="date" name="date" id="date" required>
                     
-                <button type="submit">Search</button>
+                <button class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 w-4/5 mt-4" type="submit">Search</button>
             </form>
             
             <table>
                 <tr>
                     <td>
-                        <input type="text" name="doctor-name" placeholder="Doctor's name">
+                        <input class="flex h-8 rounded-xl p-2" type="text" name="doctor-name" placeholder="Doctor's name">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" name="caregiver-name" placeholder="Caregiver's name">
+                        <input class="flex h-8 rounded-xl p-2" type="text" name="caregiver-name" placeholder="Caregiver's name">
                     </td>
                 </tr>
 
@@ -95,7 +95,7 @@
 
                 <tr>
                     <td style="display: flex; justify-content: center;">
-                        <input type="submit" name="sub">
+                        <input class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 mt-4 w-4/5" type="submit" name="sub">
                     </td>
                 </tr>
 

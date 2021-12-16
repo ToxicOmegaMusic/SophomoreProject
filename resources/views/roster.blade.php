@@ -16,13 +16,13 @@
 
     <div class="flex flex-col bg-green-900 rounded-xl w-auto mb-20 p-3 shadow-xl">
 
-        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
 
-            <form action="api/roster" method="POST">
-                <label for="date">Date</label>
-                <input type="date" name="date" id="date">
+            <form class="flex flex-col" action="api/roster" method="POST">
+                <label class="text-lg" for="date">Date</label>
+                <input class="flex h-8 rounded-xl p-2" type="date" name="date" id="date">
 
-                <input type="submit" name="submit" id="submit">
+                <input class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 w-4/5 mt-4" type="submit" name="submit" id="submit">
 
             </form>
 

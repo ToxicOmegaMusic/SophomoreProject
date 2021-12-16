@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <title>Admin Home</title>
+    <title>Create new roster</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
@@ -17,9 +17,9 @@
 
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
 
-        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5">
+        <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
 
-            <form action="api/new-roster" method="post">
+            <form class="flex flex-col" action="api/new-roster" method="post">
 
                 {{-- ARH
                 @foreach ($caregivers as $c)
@@ -35,11 +35,11 @@
                 @endforeach
                 ARH --}}
 
-                <label for="date">Type Date to create Roster for</label>
-                <input type="date" name="date" id="date" required>
+                <label class="text-lg" for="date">Type Date to create Roster for</label>
+                <input class="flex h-8 rounded-xl pl-2 mb-4" type="date" name="date" id="date" required>
 
-                <label for="supervisor">Select Supervisor for the day</label>
-                <select name="supervisorID" id="supervisor" required>
+                <label class="text-lg" for="supervisor">Select Supervisor for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="supervisorID" id="supervisor" required>
                     <option selected disabled value="">Select supervisor</option>
 
                     {{-- ARH
@@ -49,8 +49,8 @@
                     ARH --}}
                 </select>
                     
-                <label for="doctor">Select Doctor for the day</label>
-                <select name="doctorID" id="doctor" required>
+                <label class="text-lg" for="doctor">Select Doctor for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="doctorID" id="doctor" required>
                     <option selected disabled value="">Select Doctor</option>
                     {{-- ARH
                     @foreach ($doctors as $d )
@@ -59,8 +59,8 @@
                     ARH --}}
                 </select>
 
-                <label for="caregiver1">Select Caregiver for the day</label>
-                <select name="caregiver1ID" id="caregiver1" required>
+                <label class="text-lg" for="caregiver1">Select Caregiver for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="caregiver1ID" id="caregiver1" required>
                     <option selected disabled value="">Select caregiver 1</option>
                     {{-- ARH
                     @foreach ($caregivers as $c )
@@ -69,8 +69,8 @@
                     ARH --}}
                 </select>
 
-                <label for="caregiver2">Select Caregiver for the day</label>
-                <select name="caregiver2ID" id="caregiver2" required>
+                <label class="text-lg" for="caregiver2">Select Caregiver for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="caregiver2ID" id="caregiver2" required>
                     <option selected disabled value="">Select caregiver 2</option>
                     {{-- ARH
                     @foreach ($caregivers as $c )
@@ -79,8 +79,8 @@
                     ARH --}}
                 </select>
 
-                <label for="caregiver3">Select Caregiver for the day</label>
-                <select name="caregiver3ID" id="caregiver3" required>
+                <label class="text-lg" for="caregiver3">Select Caregiver for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="caregiver3ID" id="caregiver3" required>
                     <option selected disabled value="">Select caregiver 3</option>
                     {{-- ARH
                     @foreach ($caregivers as $c )
@@ -89,9 +89,9 @@
                     ARH --}}
                 </select>
                 
-                <label for="caregiver4">Select Caregiver for the day</label>
-                <select name="caregiver4ID" id="caregiver4" required>
-                    <option selected disabled value="">Select caregiver 4</option>
+                <label class="text-lg" for="caregiver4">Select Caregiver for the day</label>
+                <select class="flex h-8 rounded-xl pl-2 mb-4" name="caregiver4ID" id="caregiver4" required>
+                    <option class="flex h-8 rounded-xl" selected disabled value="">Select caregiver 4</option>
                     {{-- ARH
                     @foreach ($caregivers as $c )
                         <option value="{{ $c->id }}">{{ $c->f_name." ".$c->l_name }}</option>
@@ -99,7 +99,7 @@
                     ARH --}}
                 </select>
 
-                <input type="submit">
+                <input class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 w-4/5 mt-4" type="submit">
             </form>
         </div>
     </div>

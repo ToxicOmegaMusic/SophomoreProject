@@ -10,22 +10,22 @@
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
-        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl mb-5" action="api/doctor-appointment" method="post">
-            <label for="patientID">Patient ID</label>
-            <input type="text" id="patientID" name="patientID" required>
+        <form class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl pt-5" action="api/doctor-appointment" method="post">
+            <label class="text-xl" for="patientID">Patient ID</label>
+            <input class="flex h-8 rounded-xl p-2 mb-3" type="text" id="patientID" name="patientID" required>
 
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required>
+            <label class="text-xl" for="date">Date</label>
+            <input class="flex h-8 rounded-xl p-2 mb-3" type="date" id="date" name="date" required>
 
-            <label for="doctor">Doctor</label>
-            <select name="doctorID" id="doctor" required>
+            <label class="text-xl" for="doctor">Doctor</label>
+            <select class="flex h-8 rounded-xl p-2 mb-3" name="doctorID" id="doctor" required>
                 <option selected disabled value="">Select doctor</option>
             </select>
 
-            <label for="patientName">Patient Name</label>
-            <input type="text" id="patientName" name="patientName" disabled>
+            <label class="text-xl" for="patientName">Patient Name</label>
+            <input class="flex h-8 rounded-xl p-2 mb-3" type="text" id="patientName" name="patientName" disabled>
 
-            <input type="submit">
+            <input class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 w-40 mt-4" type="submit">
 
         </form>
     </div>
