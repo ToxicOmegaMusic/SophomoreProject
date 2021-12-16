@@ -42,6 +42,9 @@ class LoginController extends Controller
                 $_SESSION['role_name'] = roles::where('id', $user->role_id)->pluck('title')->first();
                 $_SESSION['role_id'] = roles::where('id', $user->role_id)->pluck('id')->first();
                 $_SESSION['access_level'] = roles::where('id', $user->role_id)->pluck('access_level')->first();
+                if (roles::where('id', $user->role_id)->pluck('title')->first() . '-home' == 'supervisor-home') {
+                    return(redirect('approve-user'));
+                }
                 return redirect(roles::where('id', $user->role_id)->pluck('title')->first() . '-home');
             }
             else return 'Incorrect password!';
