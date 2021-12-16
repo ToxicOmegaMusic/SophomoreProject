@@ -31,14 +31,11 @@
     </div>
 </body>
 
-
-{{-- ARH
-
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
 
-    let roster = <?php # ARH echo json_encode($roster); ?>; // this passes the variable from php to javascript
-    let patients = <?php # ARH echo json_encode($patients); ?>; 
+    let roster = <?php echo json_encode($roster); ?>; // this passes the variable from php to javascript
+    let patients = <?php echo json_encode($patients); ?>; 
 
     // This displays doctors in select 
     $(document).ready(function () {
@@ -73,5 +70,3 @@
     });
 
 </script>
-
-ARH --}}

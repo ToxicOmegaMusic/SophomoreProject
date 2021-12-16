@@ -36,15 +36,12 @@
                     <th>Role Name</th>
                     <th>Access Level</th>
                 </tr>
-
-                {{-- ARH
                 @foreach ($data as $r )
                     <tr>
                         <td>{{ $r->title }}</td>
                         <td>{{ $r->access_level }}</td>
                     </tr>
                 @endforeach
-                ARH --}}
                 
             </table>
 

@@ -24,9 +24,6 @@
                             <th>Name</th>
                             <th>Role</th>
                         </tr>
-                        
-                        
-                        {{-- ARH
 
                         @foreach($patient as $key => $d)
                         <tr>
@@ -57,8 +54,6 @@
                             <td>{{ ucwords($roles[$d->role_id-1]->title) }}</td>
                         </tr>
                         @endforeach
-
-                        ARH --}}
 
                 </table>
 

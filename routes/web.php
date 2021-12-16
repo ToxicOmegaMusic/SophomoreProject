@@ -38,7 +38,7 @@ Route::get('/register', function () {
 });
 
 
-/* --- ARH
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(function () {
     Route::get('/patients', function() { return view('patients'); });
 });
@@ -86,32 +86,3 @@ Route::middleware(['App\Http\Middleware\UserMiddleware:6'])->group(function () {
 
     Route::get('/family-home', function() { return view('family-home'); });
 });
-
-ARH  --- */
-
-/* --- This is stuff I will delete later. ARH --- */
-Route::get('/admin-home', function() { return view('admin-home'); });
-
-Route::get('/approve-user', function() { return view('approve-user'); });
-
-Route::get('/caregiver-home', function() { return view('caregiver-home'); });
-
-Route::get('/doctor-appointment', function() { return view('doctor-appointment'); });
-
-Route::get('/doctor-patient', function() { return view('doctor-patient'); });
-
-Route::get('/employee-info', function() { return view('employee-info'); });
-
-Route::get('/family-home', function() { return view('family-home'); });
-
-Route::get('/new-role', function() { return view('new-role'); });
-
-Route::get('/new-roster', function() { return view('new-roster'); });
-
-Route::get('/newPatientAttributes', function() { return view('newPatientAttributes'); });
-
-Route::get('/patient-info', function() { return view('patient-info'); });
-
-Route::get('/payment', function() { return view('payment'); });
-
-Route::get('/roster', function() { return view('roster'); });

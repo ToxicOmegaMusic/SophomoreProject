@@ -52,8 +52,6 @@
                     <th>Admission Date</th>
                 </tr>
 
-
-                {{-- ARH
                 @if (isset($_SESSION['patient-data']))
                     @foreach ($_SESSION['patient-data'] as $patient)
                         <tr>
@@ -66,7 +64,6 @@
                         </tr>
                     @endforeach
                 @endif
-                ARH --}}
 
             </table>
 

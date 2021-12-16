@@ -35,8 +35,6 @@
                     <th>Role</th>
                     <th>Current Salary</th>
                 </tr>
-
-                {{-- ARH
                 @foreach ($data as $d )
                     <tr>
                         <td>{{ $d->id }}</td>
@@ -45,7 +43,6 @@
                         <td>{{ $d->salary }}</td>
                     </tr>
                 @endforeach
-                ARH --}}
             </table>
         </div>
     </div>

@@ -35,7 +35,6 @@
 
 </body>
 
-{{-- ARH
 <script>
     function isNumberKey(evt)
        {
@@ -47,4 +46,3 @@
           return true;
        }
 </script>
-ARH --}}

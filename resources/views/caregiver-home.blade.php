@@ -108,9 +108,6 @@
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-
-{{-- ARH
-
 <script>
     $(document).ready(function() {
     var date = new Date();
@@ -126,5 +123,3 @@
     $("#date").attr("value", today);
 });
 </script>
-
-ARH --}}
