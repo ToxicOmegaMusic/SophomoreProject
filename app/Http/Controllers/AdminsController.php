@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\doctor_appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class AdminsController extends Controller
@@ -32,17 +33,16 @@ class AdminsController extends Controller
             $output = $employee->f_name." ".$employee->l_name;
             return $output;
         }
-        $_SESSION['AR'] = DB::table('doctor_appointments')
-                        ->join('employees', 'doctor_appointments.employee_id', '=', 'employees.id')
-                        ->join('caregivers', 'doctor_appointments.date', '=', 'caregivers.date')
+        $_SESSION['AH-appointments'] = DB::table('doctor_appointments')
+                        ->whereDate('date', '=', $request->date)
                         ->get()->toArray();
-
-        // $_SESSION['AR-doctorApps'] = DB::table('doctor_appointments')
-        //             ->get()->toArray();
-        // $_SESSION['AR-caregivers'] = DB::table('doctor_appointments')
-        //             ->get()->toArray();
-        dd($_SESSION['AR'], $_SESSION['AR-doctorApps']);
-
+                        dd($_SESSION['AH-appointments']);
+        $_SESSION['AH-caregivers'] = DB::table('caregivers')
+                        ->get()->toArray();
+        $_SESSION['AH-patients'] = DB::table('patients')
+                        ->get()->toArray();
+        $_SESSION['AH-employees'] = DB::table('employees')
+                        ->get()->toArray();
         return redirect('admin-home');
     }
     /**

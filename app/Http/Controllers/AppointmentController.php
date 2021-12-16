@@ -31,9 +31,11 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $employee = DB::table('employees')
-                        ->get()->toArray();
-
+        $patient = DB::table('patients')
+                        ->where('id', $request->patientID)
+                        ->update(['admission_date' => $request->date]);
+        
+        
         $appointment = new doctor_appointment();
         $appointment->employee_id = $request->doctorID;
         $appointment->patient_id = $request->patientID;

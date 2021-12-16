@@ -11,19 +11,19 @@
             <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
         </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <form id="form" action="api/admin-home" method="POST">
-        <input type="date" name="date" id="date">
-    </form>
-
-    <script>
-        $('#date').change(function(){
-        console.log('Submiting form');                
-        $('#form').submit();
-      });
-    </script>
+        <form id="form" action="api/admin-home" method="POST">
+            <input type="date" name="date" id="date">
+        </form>
+    
+        <script>
+            $('#date').change(function(){
+                console.log('Submiting form');                
+                $('#form').submit();
+            });
+        </script>
+    
 
     <p>Missed Patient Activity</p>
     <table>
@@ -40,8 +40,19 @@
             <th>Dinner</th>
         </tr>
 
-        {{-- @foreach ( as )
-            
-        @endforeach --}}
+
+        @if (isset($_SESSION['AH-appointments']))
+            <p>{{ dd($_SESSION['AH-appointments']) }}</p>
+            <p>yes</p>
+            @foreach ($_SESSION['AH-appointments'] as $data)
+                <tr>
+                    @foreach ($_SESSION['AH-patients'] as $patients)
+                        @if ($data->patient_id == $patients->id)
+                            <td>{{ $patients->f_name." ".$patients->l_name }}</td>
+                        @endif
+                    @endforeach 
+                </tr>
+            @endforeach
+        @endif
     </table>
 </body>

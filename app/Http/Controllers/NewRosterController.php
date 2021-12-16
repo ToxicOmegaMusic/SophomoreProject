@@ -63,9 +63,9 @@ class NewRosterController extends Controller
         $roster->save();
 
         //this was for later, might delete, likely to get forgotten.
-        $caregiver1 = DB::table('caregivers')
-                        ->where('id', $request->caregiver1ID)
-                        ->update(['date' => $request->date]);
+        // $caregiver1 = DB::table('caregivers')
+        //                 ->where('id', $request->caregiver1ID)
+        //                 ->update(['date' => $request->date]);
         
         return redirect('roster');
     }
