@@ -23,10 +23,7 @@
             Eranthis<br/>Communities
         </div>
 
-        <!-- Error div -->
-        <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
-            <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
-        </div>
+        
 
         <div class="flex flex-col bg-green-900 rounded-xl p-3 w-3/5 mt-10 mb-10 shadow-xl">
             <div class="flex flex-col items-center w-full justify-around bg-indigo-200 w-3/5 h-72 rounded-xl">

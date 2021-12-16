@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
+
 <body class="flex flex-col items-center bg-green-600">
 
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
@@ -13,6 +14,7 @@
     <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
         <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
     </div>
+
 
 
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
@@ -102,6 +104,33 @@
             </table>
         </div>
     </div>
+    </form>
+    
+    <table>
+        <tr>
+            <th>Patient Name</th>
+            <th>Morning Meds</th>
+            <th>Afternoon Meds</th>
+            <th>Night Meds</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+        </tr>
+
+        @if (isset($_SESSION['CH']))
+            @foreach ($_SESSION['CH'] as $data)
+                <tr>
+                    <td>{{ $_SESSION['CH-names'][$loop->index][$data->patient_id] }}</td>
+                    <td>{{ $data->morning_med }}</td>
+                    <td>{{ $data->afternoon_med }}</td>
+                    <td>{{ $data->night_med }}</td>
+                    <td>{{ $data->breakfast }}</td>
+                    <td>{{ $data->lunch }}</td>
+                    <td>{{ $data->dinner }}</td>
+                </tr>
+            @endforeach
+        @endif
+    </table>
 
 </body>
 
@@ -123,3 +152,21 @@
     $("#date").attr("value", today);
 });
 </script>
+
+<style>
+    tr {
+        padding: 0.5vh;
+        border-bottom: 1px solid #006600;
+        display: flex;
+        max-width: 1050px;
+    }
+    th, td {
+        width: 115px
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    form {
+        border: #006600 solid 1px;
+    }
+</style>

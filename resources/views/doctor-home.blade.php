@@ -12,10 +12,6 @@
 
     <div class="flex font-serif text-5xl text-center justify-center text-indigo-200 bg-green-900 h-40 items-center w-full mb-12 cursor-pointer" onclick="location.href='/';">Eranthis<br/>Communities</div>
 
-    <!-- Error div -->
-    <div class="flex justify-center mt-5 bg-red-500 rounded-xl w-80 h-auto p-2">
-        <div class="bg-gray-100 rounded-xl w-72 p-1 text-red-800"></div>
-    </div>
     
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl"> <!-- COOL FORM BORDER -->
 
@@ -56,23 +52,18 @@
                     <th>Evening Medicine</th>
                 </tr>
 
-                <tr>
-                    <td>Barbara</td>
-                    <td>11/22/2021</td>
-                    <td>The patient was unruly today</td>
-                    <td>Vitamin C</td>
-                    <td>None</td>
-                    <td>Ibuprofen</td>
-                </tr>
-
-                <tr>
-                    <td>Barry</td>
-                    <td>11/23/2021</td>
-                    <td>Knee was sore</td>
-                    <td>Vitamin E</td>
-                    <td>Cocaine</td>
-                    <td>Flintstones gummies (2)</td>
-                </tr>
+                @if (isset($_SESSION['DH']))
+                    @foreach ($_SESSION['DH'] as $data)
+                        <tr>
+                            <td>{{ $_SESSION['DH-names'][$loop->index][$data->patient_id] }}</td>
+                            <td>{{ $data->date }}</td>
+                            <td>{{ $data->comment }}</td>
+                            <td>{{ $data->morning_prescription }}</td>
+                            <td>{{ $data->afternoon_prescription }}</td>
+                            <td>{{ $data->night_prescription }}</td>
+                        </tr>
+                    @endforeach
+                @endif
             </table>
         </div>
 
@@ -81,8 +72,8 @@
         <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl">
             <div class="appointmentSearchBarByDate text-xl">
                 Upcoming Appointments
-                <form>
-                <input class="text-xl" type="date">
+                <form action="api/doctor-home" method="post">
+                <input name="otherDate" class="text-xl" type="date">
                 <input class="text-xl bg-green-900 rounded-xl text-indigo-200 text-serif w-20 h-10 hover:bg-green-700 cursor-pointer shadow-xl" type="submit">
 
             </div>
@@ -93,6 +84,15 @@
                     <th>Patient Name</th>
                     <th>Appointment date</th>
                 </tr>
+
+                @if (isset($_SESSION['DH-upcoming']))
+                    @foreach ($_SESSION['DH-upcoming'] as $data)
+                        <tr>
+                            <td>{{ $_SESSION['DH-UC-names'][$loop->index][$data->patient_id] }}</td>
+                            <td>{{ $data->date }}</td>
+                        </tr>
+                    @endforeach
+                @endif
             </table>
         </div>
     </div>

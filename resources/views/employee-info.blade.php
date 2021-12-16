@@ -12,6 +12,7 @@
     <div class="flex flex-col bg-green-900 rounded-xl w-3/5 mb-20 p-3 shadow-xl">
         <div class="flex flex-col bg-indigo-200 w-full items-center h-auto rounded-xl p-4">
     
+
             <form class="flex flex-col" action="api/employee-info" method="POST">
                 <label class="text-lg" for="employeeID">Employee ID</label>
                 <input class="flex h-8 rounded-xl p-2" type="number" id="employeeID" name="employeeID">
@@ -35,17 +36,18 @@
                     <th>Role</th>
                     <th>Current Salary</th>
                 </tr>
-                @foreach ($data as $d )
-                    <tr>
-                        <td>{{ $d->id }}</td>
-                        <td>{{ $d->f_name." ".$d->l_name }}</td>
-                        <td>{{ $d->role_id }}</td>
-                        <td>{{ $d->salary }}</td>
-                    </tr>
-                @endforeach
+            @foreach ($data as $d )
+                <tr>
+                    <td>{{ $d->id }}</td>
+                    <td>{{ $d->f_name." ".$d->l_name }}</td>
+                    <td>{{ $d->role_id }}</td>
+                    <td>{{ $d->salary }}</td>
+                </tr>
+            @endforeach
             </table>
         </div>
     </div>
+
 </body>
 
 <style>

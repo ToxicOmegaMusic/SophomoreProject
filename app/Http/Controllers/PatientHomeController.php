@@ -17,7 +17,6 @@ class PatientHomeController extends Controller
         $data = DB::table('doctor_appointments')
             ->join('patients', 'patients.id', '=', 'doctor_appointments.patient_id')
             ->get()->toArray();
-        dd($data);
         $doctor = DB::table('employees')
             ->where('id', '=', $data['0']->employee_id)
             ->get()->toArray();

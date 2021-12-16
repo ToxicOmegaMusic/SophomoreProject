@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 </head>
 
+
 <body class="flex flex-col items-center bg-green-600">
 
 
@@ -49,18 +50,19 @@
                     <th>Dinner</th>
                 </tr>
 
-                <tr>
-                    <td>Charlie</td>
-                    <td>Armedia De Palma</td>
-                    <td>10/20/2021</td>
-                    <td>Carl Calewell</td>
-                    <td><input type="checkbox" disabled></td>
-                    <td><input type="checkbox" disabled></td>
-                    <td><input type="checkbox" disabled></td>
-                    <td><input type="checkbox" disabled></td>
-                    <td><input type="checkbox" disabled></td>
-                    <td><input type="checkbox" disabled></td>
-                </tr>
+            @if (isset($_SESSION['AH-appointments']))
+                <p>{{ dd($_SESSION['AH-appointments']) }}</p>
+                <p>yes</p>
+                @foreach ($_SESSION['AH-appointments'] as $data)
+                    <tr>
+                        @foreach ($_SESSION['AH-patients'] as $patients)
+                            @if ($data->patient_id == $patients->id)
+                                <td>{{ $patients->f_name." ".$patients->l_name }}</td>
+                            @endif
+                        @endforeach 
+                    </tr>
+                @endforeach
+            @endif
             </table>
         </div>
     </div>
@@ -82,3 +84,4 @@
     </style>
 
 </body>
+

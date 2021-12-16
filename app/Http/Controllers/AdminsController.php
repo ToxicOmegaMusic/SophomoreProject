@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\doctor_appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-class AppointmentController extends Controller
+class AdminsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $roster = DB::table('rosters')
-            ->get()->toArray();
-        $patients = DB::table('patients')
-            ->get()->toArray();
-        // dd($roster);
-        return view('doctor-appointment', compact('roster', 'patients'));
+        return view('admin-home');
     }
 
     /**
@@ -31,24 +25,26 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = DB::table('patients')
-                        ->where('id', $request->patientID)
-                        ->update(['admission_date' => $request->date]);
-        
-        
-        $appointment = new doctor_appointment();
-        $appointment->employee_id = $request->doctorID;
-        $appointment->patient_id = $request->patientID;
-        $appointment->date = $request->date;
-        $appointment->comment = '';
-        $appointment->morning_prescription = '';
-        $appointment->afternoon_prescription = '';
-        $appointment->night_prescription = '';
-        $appointment->save();
-
-        return back();
+        // returns name found by id
+        function getNameByID($id) {
+            $employee = DB::table('employees')
+                            ->where('id', $id)
+                            ->get()->first();
+            $output = $employee->f_name." ".$employee->l_name;
+            return $output;
+        }
+        $_SESSION['AH-appointments'] = DB::table('doctor_appointments')
+                        ->whereDate('date', '=', $request->date)
+                        ->get()->toArray();
+                        dd($_SESSION['AH-appointments']);
+        $_SESSION['AH-caregivers'] = DB::table('caregivers')
+                        ->get()->toArray();
+        $_SESSION['AH-patients'] = DB::table('patients')
+                        ->get()->toArray();
+        $_SESSION['AH-employees'] = DB::table('employees')
+                        ->get()->toArray();
+        return redirect('admin-home');
     }
-
     /**
      * Display the specified resource.
      *
