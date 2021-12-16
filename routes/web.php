@@ -41,6 +41,7 @@ Route::get('/register', function () {
 });
 
 
+
 Route::middleware(['App\Http\Middleware\UserMiddleware:5 4 3 2 1'])->group(function () {
     Route::get('/patients', function() { return view('patients'); });
 });
