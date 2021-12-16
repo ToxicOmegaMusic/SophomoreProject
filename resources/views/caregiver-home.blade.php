@@ -51,51 +51,30 @@
                         <p>Did you have the appointment?</p>
                         <input type="checkbox" id="had-appt">
                     </td>
-                </tr>
-
-                <tr>
                     <td>
                         <p>Took morning medicine</p>
                         <input type="checkbox" id="took-morning-meds">
                     </td>
-                </tr>
-
-                <tr>
                     <td>
                         <p>Took afternoon medicine</p>
                         <input type="checkbox" id="took-afternoon-meds">
                     </td>
-                </tr>
-
-                <tr>
                     <td>
                         <p>Took evening medicine</p>
                         <input type="checkbox" id="took-evening-meds">
-                        </td>
-                </tr>
-
-                <tr>
+                    </td>
                     <td>
                         <p>Had breakfast</p>
                         <input type="checkbox" id="had-breakfast">
                     </td>
-                </tr>
-
-                <tr>
                     <td>
                         <p>Had lunch</p>
                         <input type="checkbox" id="had-lunch">
                     </td>
-                </tr>
-
-                <tr>
                     <td>
                         <p>Had dinner</p>
                         <input type="checkbox" id="had-dinner">
                     </td>
-                </tr>
-
-                <tr>
                     <td style="display: flex; justify-content: center;">
                         <input class="flex items-center justify-center bg-green-900 font-serif text-xl text-indigo-200 rounded-xl mb-10 hover:bg-green-700 shadow-xl h-10 mt-4 w-4/5" type="submit" name="sub">
                     </td>

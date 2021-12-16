@@ -38,8 +38,7 @@
                     <th>Caregiver 3</th>
                     <th>Caregiver 4</th>
                 </tr>
-
-                {{-- ARH
+                
                 @if (isset($_SESSION['roster-data']))
                     @foreach ($_SESSION['roster-data'] as $roster)
                         <tr>
@@ -55,7 +54,6 @@
                 @else
                     <p>No Data to be displayed</p>
                 @endif
-                ARH --}}
                 
             </table>
         </div>
